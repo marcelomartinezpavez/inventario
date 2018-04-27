@@ -10,13 +10,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
-
     <style>
         header, main, footer {
             padding-left: 300px;
         }
 
-        @media only screen and (max-width : 992px) {
+        @media only screen and (max-width: 992px) {
             header, main, footer {
                 padding-left: 0;
             }
@@ -27,8 +26,197 @@
 <body>
 <div class="menuContainer"></div>
 <main>
-    este es proveedor
+    <h1>Proveedores</h1>
+
+    <div class="row">
+        <div class="col l11">
+            <div class="row">
+                <div class="input-field col s1">
+                    <select id="limit">
+                        <option value="1"> 1</option>
+                        <option value="3"> 3</option>
+                        <option value="5" selected> 5</option>
+                    </select>
+                    <label>Mostrar:</label>
+                </div>
+                <div class="col l5 right">
+                    <nav>
+                        <div class="nav-wrapper">
+                            <form>
+                                <div class="input-field">
+                                    <input id="search" type="search" required>
+                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                                    <i class="material-icons">close</i>
+                                </div>
+                            </form>
+                        </div>
+                    </nav>
+                </div>
+
+            </div>
+            <table class="highlight">
+                <thead>
+                <tr>
+                    <th>Rut</th>
+                    <th>Nombre</th>
+                    <th>Direccion</th>
+                    <th>Comuna</th>
+                    <th>Mail</th>
+                    <th>Celular</th>
+                    <th>Fono</th>
+                    <th>Contacto</th>
+                    <th>Opciones</th>
+                </tr>
+                </thead>
+
+                <tbody id="proveedores">
+                <!--
+                <tr>
+                    <td>Alvin</td>
+                    <td>Eclair</td>
+                    <td>$0.87</td>
+                </tr>
+                <tr>
+                    <td>Alan</td>
+                    <td>Jellybean</td>
+                    <td>$3.76</td>
+                </tr>
+                <tr>
+                    <td>Jonathan</td>
+                    <td>Lollipop</td>
+                    <td>$7.00</td>
+                </tr>
+                -->
+                </tbody>
+            </table>
+
+
+            <ul class="pagination right-align">
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+                <li class="active"><a href="#!">1</a></li>
+                <li class="waves-effect"><a href="#!">2</a></li>
+                <li class="waves-effect"><a href="#!">3</a></li>
+                <li class="waves-effect"><a href="#!">4</a></li>
+                <li class="waves-effect"><a href="#!">5</a></li>
+                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+            </ul>
+
+        </div>
+    </div>
+
+    <div class="fixed-action-btn">
+
+        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger z-depth-5 hoverable"
+           href="#modalAgregarProveedor"><i
+                class="material-icons">add</i></a>
+    </div>
+
 </main>
+<!-- Modal Structure -->
+<div id="modalAgregarProveedor" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="row">
+
+            <h4 class="col l6">Crear Proveedor</h4>
+            <div class="col l6 right-align">
+                <div class="switch">
+                    <label>
+                        Inhabilitado
+                        <input type="checkbox">
+                        <span class="lever"></span>
+                        Habilitado
+                    </label>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row">
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="epRut" type="text" class="validate">
+                    <label for="epRut">Rut</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="name" type="text" class="validate">
+                    <label for="name">Nombre</label>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="epCelular" type="text" class="validate">
+                    <label for="epCelular">Celular</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="epContacto" type="text" class="validate">
+                    <label for="epContacto">Contacto</label>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="epRazonSocial" type="text" class="validate">
+                    <label for="epRazonSocial">Razon Social</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="epFax" type="text" class="validate">
+                    <label for="epFax">Fax</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="epGiro" type="text" class="validate">
+                    <label for="epGiro">Giro</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="telefono" type="text" class="validate">
+                    <label for="telefono">Telefono</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input id="epMail" type="text" class="validate">
+                    <label for="epMail">Mail</label>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="epBanco" type="text" class="validate">
+                    <label for="epBanco">Banco</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="epCuenta" type="text" class="validate">
+                    <label for="epCuenta">Cuenta</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input id="epTipoCuenta" type="text" class="validate">
+                    <label for="epTipoCuenta">Tipo Cuenta</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="epDireccion" type="text" class="validate">
+                    <label for="epDireccion">Direccion</label>
+                </div>
+            </div>
+
+            <div id="selectDireccion"></div>
+
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a id="test" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
+    </div>
+</div>
+
+
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -38,14 +226,17 @@
 </script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
+<script>
+    M.AutoInit();
+    $(document).ready(function () {
+        $('.modal').modal();
+    });
 
-
-
-
-
-
-
+    M.updateTextFields();
+</script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+<script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+
 <script>
     // Initialize Firebase
     var config = {
@@ -57,10 +248,180 @@
         messagingSenderId: "249599638020"
     };
     firebase.initializeApp(config);
+    var db = firebase.firestore();
+
 </script>
 
 
+<script>
 
+    var limit = 5;
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            crearTabla();
+
+
+            console.log("si hay usuario");
+
+
+            $("#test").click(function () {
+
+                console.log("vamos bien");
+                var prove = {
+                    rut: $("#epRut").val(),
+                    nombre: $("#name").val(),
+                    celular: $("#epCelular").val(),
+                    contacto: $("#epContacto").val(),
+                    fax: $("#epFax").val(),
+                    giro: $("#epGiro").val(),
+                    telefono: $("#telefono").val(),
+                    mail: $("#epMail").val(),
+                    banco: $("#epBanco").val(),
+                    cuenta: $("#epCuenta").val(),
+                    tipoCuenta: $("#epTipoCuenta").val(),
+                    direccion: $("#epDireccion").val(),
+                    region: $("#region :selected").text(),
+                    provincia: $("#provincia :selected").text(),
+                    comuna: $("#comuna :selected").text(),
+                };
+                console.log(prove);
+                db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(prove.rut).set(prove);
+
+                crearTabla();
+
+            });
+            $("#limit").change(function () {
+                limit = $("#limit").val();
+                console.log(limit);
+                crearTabla();
+            });
+
+            function crearTabla() {
+                $("#proveedores").empty();
+
+
+                var prov = "<tr>";
+                db.collection("Usuarios").doc(user.uid).collection("Proveedores").limit(parseInt(limit)).get().then(function (querySnapshot) {
+
+                    querySnapshot.forEach(function (doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        var rut = doc.data().rut;
+                        var nombre = doc.data().nombre;
+                        var direccion = doc.data().direccion;
+                        var comuna = doc.data().comuna;
+                        var mail = doc.data().mail;
+                        var celular = doc.data().celular;
+                        var fono = doc.data().telefono
+                        var contacto = doc.data().contacto;
+                        prov = prov + "<td>" + rut + "</td>" +
+                            "<td>" + nombre + "</td>" +
+                            "<td>" + direccion + "</td>" +
+                            "<td>" + comuna + "</td>" +
+                            "<td>" + mail + "</td>" +
+                            "<td>" + celular + "</td>" +
+                            "<td>" + fono + "</td>" +
+                            "<td>" + contacto + "</td>" +
+                            "<td><a class=\"btn-floating waves-effect waves-light green\"><i class=\"material-icons\">more_horiz</i></a>" +
+                            "<a class=\"btn-floating waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a>\n" +
+                            "<a class=\"btn-floating waves-effect waves-light red\"><i class=\"material-icons\">delete</i></a>\n</td>" +
+                            "</tr>";
+
+                    });
+                    $("#proveedores").append(prov);
+                })
+                    .then(function () {
+                        console.log("Se ha hecho la consulta correctamente");
+                    })
+                    .catch(function (error) {
+                        console.error("Error writing document: ", error);
+                    });
+
+
+            }
+
+
+            db.collection("Regiones").get().then(function (querySnapshot) {
+                var html =
+                    "<div class=\"input-field col s12 l6\">" +
+                    "<select class=\" \" onchange=\"cargaProvincias(this)\" id=\"region\">" +
+                    "<option value=\"0\" disabled selected>Selecciona una Region</option>\n";
+                querySnapshot.forEach(function (doc) {
+                    // doc.data() is never undefined for query doc snapshots
+                    html = html + " <option value=" + doc.id.trim() + ">" + doc.id + "</option>\n";
+                });
+                html = html + "</select>" +
+                    "<label>Regiones</label>" +
+                    "</div>" +
+                    "<div class=\"input-field col s12 l6\">" +
+                    "<select onchange=\"cargaComunas(this)\" id=\"provincia\">" +
+                    "<option value=\"0\" disabled selected>Selecciona una Provincia</option>\n" +
+                    "</select>\n" +
+                    "<label>Provincias</label>" +
+
+                    "</div>" +
+                    "<div class=\"input-field col s12 l6\">\n" +
+                    "<select id='comuna'>\n" +
+                    "<option value=\"0\" disabled selected>Selecciona una comuna</option>\n" +
+                    "</select>\n" +
+                    "<label>Comunas</label>\n" +
+
+                    "</div>";
+
+                $('#selectDireccion').append(html);
+                $('select').formSelect();
+
+                //document.write(html);
+            });
+
+
+        }
+        else {
+            console.error("sin usuario")
+
+
+        }
+    });
+</script>
+<script>
+    function cargaComunas(provinciaSelect) {
+        $('#comuna').find('option:not(:first)').remove();
+        $('#comuna').val("0");
+        var provincia = $("#provincia :selected").text();
+        var region = $("#region :selected").text();
+        var html = '';
+        db.collection("Regiones").doc(region).collection("Provincias").doc(provincia).collection("Comunas").get().then(function (querySnapshot) {
+
+
+            querySnapshot.forEach(function (doc) {
+                html = html + " <option value=\"1\">" + doc.id + "</option>\n";
+            });
+            $("#comuna").append(html);
+            $('select').formSelect();
+
+        });
+    }
+
+    function cargaProvincias(regionSelect) {
+        $('#provincia').find('option:not(:first)').remove();
+        $("#provincia").val("0");
+        $('#comuna').find('option:not(:first)').remove();
+        $('#comuna').val("0");
+        var region = $("#region").find(":selected").text();
+        var html = '';
+        console.log(region);
+        db.collection("Regiones").doc(region).collection("Provincias").get().then(function (querySnapshot) {
+
+            querySnapshot.forEach(function (doc) {
+                html = html + "<option value=" + doc.id + ">" + doc.id + "</option>\n";
+            });
+            $("#provincia").append(html);
+            $('select').formSelect();
+
+        });
+    }
+
+
+</script>
 
 
 </body>
