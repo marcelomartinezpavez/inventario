@@ -1,84 +1,85 @@
-<nav>
-    <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">Sistema de Inventario</a>
-        <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        <ul class="right hide-on-med-and-down">
-            <li><a href="cliente.html">Cliente</a></li>
-            <li><a href="proveedor.html">Proveedor</a></li>
-            <li><a href="producto.html">Producto</a></li>
-            <li><a href="compra.html">Compra</a></li>
-            <li><a href="venta.html">Venta</a></li>
-            <li><a href="index.html">Inicio</a></li>
-            <!--<li><a href="mobile.html">Configuracion</a></li>-->
-        </ul>
-    </div>
-</nav>
-<ul id="slide-out" class="sidenav sidenav-fixed">
-    <li>
-        <div class="user-view">
-            <div class="background">
-                <img class="responsive-img"
-                     src="https://orig00.deviantart.net/20eb/f/2015/030/6/f/_minflat__dark_material_design_wallpaper__4k__by_dakoder-d8fjqzu.jpg">
+<main>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">Sistema de Inventario</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="cliente.html">Cliente</a></li>
+                <li><a href="proveedor.html">Proveedor</a></li>
+                <li><a href="producto.html">Producto</a></li>
+                <li><a href="compra.html">Compra</a></li>
+                <li><a href="venta.html">Venta</a></li>
+                <li><a href="index.html">Inicio</a></li>
+                <!--<li><a href="mobile.html">Configuracion</a></li>-->
+            </ul>
+        </div>
+    </nav>
+    <ul id="slide-out" class="sidenav sidenav-fixed">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img class="responsive-img"
+                         src="https://orig00.deviantart.net/20eb/f/2015/030/6/f/_minflat__dark_material_design_wallpaper__4k__by_dakoder-d8fjqzu.jpg">
+                </div>
+                <a href="#user"><img class="circle"
+                                     src="https://openclipart.org/image/2400px/svg_to_png/277081/Male-Avatar.png"></a>
+                <a href="#name"><span class="white-text name">John Doe</span></a>
+                <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
-            <a href="#user"><img class="circle"
-                                 src="https://openclipart.org/image/2400px/svg_to_png/277081/Male-Avatar.png"></a>
-            <a href="#name"><span class="white-text name">John Doe</span></a>
-            <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+        </li>
+        <li><a class="modal-trigger" href="#modalEditarPerfil"><i class="material-icons">edit</i>Editar perfil</a></li>
+        <li>
+            <div class="divider"></div>
+        </li>
+        <li><a class="subheader">Menu</a></li>
+        <li><a class="waves-effect" href="configuracion.html">Configuracion</a></li>
+        <li><a id="cerrarSesion" class="waves-effect" href="#!">Cerrar Sesion</a></li>
+    </ul>
+
+
+    <!-- Modal Structure -->
+    <div id="modalEditarPerfil" class="modal modal-fixed-footer">
+        <div class="modal-content">
+
+            <h4>Peril de Usuario</h4>
+            <div class="row">
+                <form class="col s12">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input id="epNombre" type="text" class="validate">
+                            <label for="epNombre">Nombre de Usuario</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <input disabled value="correo" id="epMail" type="text" class="validate">
+                            <label for="epMail">Correo</label>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="epTelefono" type="number" class="validate">
+                            <label for="epTelefono">Telefono</label>
+                        </div>
+
+                    </div>
+
+                </form>
+            </div>
         </div>
-    </li>
-    <li><a class="modal-trigger" href="#modalEditarPerfil"><i class="material-icons">edit</i>Editar perfil</a></li>
-    <li>
-        <div class="divider"></div>
-    </li>
-    <li><a class="subheader">Menu</a></li>
-    <li><a class="waves-effect" href="configuracion.html">Configuracion</a></li>
-    <li><a id="cerrarSesion" class="waves-effect" href="#!">Cerrar Sesion</a></li>
-</ul>
-
-
-<!-- Modal Structure -->
-<div id="modalEditarPerfil" class="modal modal-fixed-footer">
-    <div class="modal-content">
-
-        <h4>Peril de Usuario</h4>
-        <div class="row">
-            <form class="col s12">
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epNombre" type="text" class="validate">
-                        <label for="epNombre">Nombre de Usuario</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input disabled value="correo" id="epMail" type="text" class="validate">
-                        <label for="epMail">Correo</label>
-                    </div>
-                </div>
-
-
-                <div class="row">
-                    <div class="input-field col s12">
-                        <input id="epTelefono" type="number" class="validate">
-                        <label for="epTelefono">Telefono</label>
-                    </div>
-
-                </div>
-
-            </form>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
         </div>
     </div>
-    <div class="modal-footer">
-        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
-    </div>
-</div>
 
 
-<script>
-    M.AutoInit();
-    M.updateTextFields();
+    <script>
+        M.AutoInit();
+        M.updateTextFields();
 
-    var elem = document.querySelector('.sidenav',',modal');
+        var elem = document.querySelector('.sidenav', ',modal');
 
-</script>
-<script src="js/menu.js"></script>
-
+    </script>
+    <script src="js/menu.js"></script>
+</main>
 

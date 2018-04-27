@@ -26,16 +26,16 @@
 <body>
 <div class="menuContainer"></div>
 <main>
-    <h1>Proveedores</h1>
+    <h3>Proveedores</h3>
 
     <div class="row">
         <div class="col l11">
             <div class="row">
                 <div class="input-field col s1">
                     <select id="limit">
-                        <option value="1"> 1</option>
-                        <option value="3"> 3</option>
-                        <option value="5" selected> 5</option>
+                        <option value="10">10</option>
+                        <option value="25" selected>25</option>
+                        <option value="50">50</option>
                     </select>
                     <label>Mostrar:</label>
                 </div>
@@ -44,7 +44,7 @@
                         <div class="nav-wrapper">
                             <form>
                                 <div class="input-field">
-                                    <input id="search" type="search" required>
+                                    <input id="search" type="search" value="" required>
                                     <label class="label-icon" for="search"><i class="material-icons">search</i></label>
                                     <i class="material-icons">close</i>
                                 </div>
@@ -101,6 +101,7 @@
                 <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
             </ul>
 
+
         </div>
     </div>
 
@@ -122,7 +123,7 @@
                 <div class="switch">
                     <label>
                         Inhabilitado
-                        <input type="checkbox">
+                        <input id="habilitado" type="checkbox" checked>
                         <span class="lever"></span>
                         Habilitado
                     </label>
