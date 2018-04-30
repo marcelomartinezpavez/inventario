@@ -76,7 +76,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             "<td>"+celular+"</td>"+
             "<td>"+telefono+"</td>"+
             "<td>"+contacto+"</td>" +
-            "<td> <a class=\"btn-floating waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a> </td>" +
+            "<td> <a onclick=\"editarCliente()\" class=\"modal-action modal-close waves-effect waves-green btn-flat btn-floating waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a> </td>" +
             "<td> <a class=\"btn-floating waves-effect waves-light red\"><i class=\"material-icons\">delete</i></a> </td>" +
             "</tr>";
 
