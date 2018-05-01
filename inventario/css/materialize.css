@@ -2735,7 +2735,7 @@ video.responsive-video {
   height: auto;
 }
 
-.pagination li {
+.dataTables_paginate span a {
   display: inline-block;
   border-radius: 2px;
   text-align: center;
@@ -2743,7 +2743,11 @@ video.responsive-video {
   height: 30px;
 }
 
-.pagination li a {
+.dataTables_paginate a {
+    cursor: pointer;
+}
+
+.dataTables_paginate span a {
   color: #444;
   display: inline-block;
   font-size: 1.2rem;
@@ -2751,37 +2755,49 @@ video.responsive-video {
   line-height: 30px;
 }
 
-.pagination li.active a {
+.dataTables_paginate span a.current {
   color: #fff;
 }
 
-.pagination li.active {
+.dataTables_paginate span a.current {
   background-color: #ee6e73;
 }
 
-.pagination li.disabled a {
+/*.dataTables_paginate a.disabled i{*/
+/*cursor: default;*/
+/*color: #999;*/
+/*}*/
+
+/*.dataTables_paginate span a.current{*/
+/*color: red;*/
+/**/
+/*}*/
+
+.dataTables_paginate a.disabled {
   cursor: default;
   color: #999;
 }
 
-.pagination li i {
+.dataTables_paginate a i {
   font-size: 2rem;
 }
 
-.pagination li.pages ul li {
+.dataTables_paginate li.pages ul li {
   display: inline-block;
   float: none;
 }
 
 @media only screen and (max-width: 992px) {
-  .pagination {
+    .dataTables_paginate {
     width: 100%;
   }
-  .pagination li.prev,
-  .pagination li.next {
+
+    .dataTables_paginate li.prev,
+    .dataTables_paginate li.next {
     width: 10%;
   }
-  .pagination li.pages {
+
+    .dataTables_paginate li.pages {
     width: 80%;
     overflow: hidden;
     white-space: nowrap;
