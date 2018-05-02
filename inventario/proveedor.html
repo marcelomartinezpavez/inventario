@@ -86,7 +86,8 @@
 
     <div class="fixed-action-btn">
 
-        <a class="btn-floating btn-large waves-effect waves-light green modal-trigger z-depth-5 hoverable"
+        <a id="crearproov"
+           class="btn-floating btn-large waves-effect waves-light green modal-trigger z-depth-5 hoverable"
            href="#modalAgregarProveedor"><i
                 class="material-icons">add</i></a>
     </div>
@@ -294,7 +295,9 @@
                 </div>
             </div>
 
-            <div id="eeselectDireccion"></div>
+            <div id="test">
+
+            </div>
 
         </div>
     </div>
@@ -317,6 +320,8 @@
 <script>
     M.AutoInit();
     $(document).ready(function () {
+        // $("#selectDireccion").appendTo(".test");
+
         $('.modal').modal();
         M.updateTextFields();
 

@@ -1,16 +1,24 @@
 <main>
     <nav>
+
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">Sistema de Inventario</a>
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+
+            <!--<a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">-->
+            <!--<i class="material-icons">add</i>-->
+            <!--</a>-->
             <ul class="right hide-on-med-and-down">
-                <li><a href="cliente.html">Cliente</a></li>
-                <li><a href="proveedor.html">Proveedor</a></li>
-                <li><a href="producto.html">Producto</a></li>
-                <li><a href="compra.html">Compra</a></li>
-                <li><a href="venta.html">Venta</a></li>
-                <li><a href="index.html">Inicio</a></li>
-                <!--<li><a href="mobile.html">Configuracion</a></li>-->
+                <li><a class="waves-effect tooltipped" data-position="bottom" data-tooltip="Configuracion"
+                       href="configuracion.html"><i class="material-icons">settings</i></a></li>
+                <li>&emsp;</li>
+                <li><a class="modal-trigger tooltipped" data-position="bottom" data-tooltip="Editar Perfil"
+                       href="#modalEditarPerfil"><i class="material-icons">edit</i></a></li>
+                <li>&emsp;</li>
+                <li><a id="cerrarSesion" class="waves-effect tooltipped" data-position="bottom"
+                       data-tooltip="Cerrar Sesion"><i class="material-icons">exit_to_app</i></a></li>
+
+                <li>&emsp;</li>
             </ul>
         </div>
     </nav>
@@ -27,13 +35,18 @@
                 <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
             </div>
         </li>
-        <li><a class="modal-trigger" href="#modalEditarPerfil"><i class="material-icons">edit</i>Editar perfil</a></li>
-        <li>
-            <div class="divider"></div>
-        </li>
+
+        <!--<li>-->
+        <!--<div class="divider"></div>-->
+        <!--</li>-->
         <li><a class="subheader">Menu</a></li>
-        <li><a class="waves-effect" href="configuracion.html">Configuracion</a></li>
-        <li><a id="cerrarSesion" class="waves-effect" href="#!">Cerrar Sesion</a></li>
+
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="cliente.html">Cliente</a></li>
+        <li><a href="proveedor.html">Proveedor</a></li>
+        <li><a href="producto.html">Producto</a></li>
+        <li><a href="compra.html">Compra</a></li>
+        <li><a href="venta.html">Venta</a></li>
     </ul>
 
 
