@@ -1,34 +1,50 @@
-firebase.auth().onAuthStateChanged(function(user) {
+firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+
+
+        $("#nombre").append("<span class=\"white-text name\">" + user.displayName + "</span>");
+        $("#email").append("<span class=\"white-text email\">" + user.email + "</span>");
 
         console.log(user);
 
+        $("#guardarperfil").click(function () {
+            user.updateProfile({
+                displayName: $("#epNombre").val(),
+                photoURL: "https://example.com/jane-q-user/prile.jpg"
+            }).then(function () {
+                $("#nombre").empty();
+                $("#email").empty();
+                $("#nombre").append("<span class=\"white-text name\">" + user.displayName + "</span>");
+                $("#email").append("<span class=\"white-text email\">" + user.email + "</span>");
+            }).catch(function (error) {
+                // An error happened.
+            });
 
 
+        });
+
+        $("#editarperfilmodal").click(function () {
+            $("#epNombre").val(user.displayName);
+            $("#epMail").val(user.email);
+            $("#epTelefono").val(user.phoneNumber);
+
+            M.updateTextFields();
+        });
 
 
-        // user.updateProfile({
-        //     displayName: "Jane Q. User",
-        //     photoURL: "https://example.com/jane-q-user/profile.jpg"
-        // }).then(function() {
-        //     // Update successful.
-        // }).catch(function(error) {
-        //     // An error happened.
-        // });
+        $('#cerrarSesion').click(function () {
 
-$('#cerrarSesion').click(function () {
-
-    firebase.auth().signOut().then(function() {
-        console.warn("Sesion Cerrada");
-        window.location.href = 'iniciarSesion.html';
+            firebase.auth().signOut().then(function () {
+                console.warn("Sesion Cerrada");
+                window.location.href = 'iniciarSesion.html';
 
 
-        // Sign-out successful.
-    }).catch(function(error) {
-        // An error happened.
-    });
+                // Sign-out successful.
+            }).catch(function (error) {
+                // An error happened.
+            });
 
-});
+        });
 
     } else {
         window.location.href = 'iniciarSesion.html';

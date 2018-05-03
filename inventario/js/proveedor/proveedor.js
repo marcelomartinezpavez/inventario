@@ -10,9 +10,17 @@ var config = {
 firebase.initializeApp(config);
 var db = firebase.firestore();
 
-//Se detecta si hay un usuario autenticado y que pasara en este c
+
+//Se detecta si hay un usuario autenticado y que pasara en este caso
 firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
+
+            // $('#habilitado').click(function () {
+            //     if (!$(this).is(':checked')) {
+            //         return confirm("El proveedor se creara deshabilitado");
+            //     }
+            // });
+
             crearTabla();
             $("#botonguardar").click(function () {
 
@@ -22,8 +30,6 @@ firebase.auth().onAuthStateChanged(function (user) {
                 }
 
 
-                console.log("vamos bien");
-                console.log(habilitado);
                 var prove = {
                     rut: $("#epRut").val(),
                     habilitado: habilitado,
@@ -45,12 +51,15 @@ firebase.auth().onAuthStateChanged(function (user) {
                 };
                 console.log(prove);
                 db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(prove.rut).set(prove);
+                M.toast({html: 'El usuario se ha creado correctamente', classes: 'rounded green'});
+
                 crearTabla();
                 $("#selectDireccion").empty();
-                $("#test").empty();
+                $("#selectdireccioneditar").empty();
 
             });
             $("#eebotonguardar").click(function () {
+
 
                 var eehabilitado = true;
                 if (!$("#eehabilitado").prop('checked')) {
@@ -79,14 +88,15 @@ firebase.auth().onAuthStateChanged(function (user) {
 
                 db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(eeprov.rut).set(eeprov)
                     .then(function () {
+
                         crearTabla();
                         $("#selectDireccion").empty();
-                        $("#test").empty();
-                        console.log("Los datos se han sobreescrito correctamente");
+                        $("#selectdireccioneditar").empty();
+                        M.toast({html: 'Los datos se han modificado correctamente', classes: 'rounded green'});
                     })
                     .catch(function (error) {
-                        console.error("no se puede sobreescribir");
-                        console.error("Error writing document: ", error);
+                        M.toast({html: 'Error al sobreescribir', classes: 'rounded red'});
+                        M.toast({html: 'Descripcion del error' + error, classes: 'rounded red'});
                     });
             });
 
@@ -104,11 +114,10 @@ firebase.auth().onAuthStateChanged(function (user) {
                     "<th>Celular</th>" +
                     "<th>Fono</th>" +
                     "<th>Contacto</th>" +
-                    // "                    <th>Opciones</th>\n" +
+                    // "<th>Opciones</th>" +
                     "</tr>" +
                     "</thead>" +
                     "<tbody>" +
-                    "\n" +
                     // db.collection("Usuarios").doc(user.uid).collection("Proveedores").orderBy("rut")
                     //     .startAfter("12312").limit(parseInt(limit)).get().then(function (querySnapshot) {
 
@@ -150,8 +159,6 @@ firebase.auth().onAuthStateChanged(function (user) {
 
                     })
                         .then(function () {
-                            console.log("Se ha hecho la consulta correctamente");
-                            M.toast({html: 'Se ha hecho la consulta correctamente', classes: 'rounded'});
                             $('#proveedores').DataTable({
                                 "language": {
                                     "sProcessing": "Procesando...",
@@ -183,7 +190,8 @@ firebase.auth().onAuthStateChanged(function (user) {
                             $("#proveedores_filter").addClass("col s11 l11");
                             $("#proveedores_info").addClass("col s6 l6");
                             $("#proveedores_paginate").addClass("col l6 right-align flow-text");
-
+                            $("#proveedores").append("<br>");
+                            $('select').formSelect();
 
                         })
                         .catch(function (error) {
@@ -195,8 +203,11 @@ firebase.auth().onAuthStateChanged(function (user) {
 
             //Detectar cual es el rut de la celda donde se esta haciendo click
             $('#proveedores').on('click', 'tr td', function (evt) {
+
                 $("#selectDireccion").empty();
-                $("#test").empty();
+                $("#selectdireccioneditar").empty();
+
+
                 regionesmodificar();
                 var target, rut;
                 target = $(event.target);
@@ -243,22 +254,17 @@ firebase.auth().onAuthStateChanged(function (user) {
 
             $("#crearproov").click(function () {
                 $("#selectDireccion").empty();
-                $("#test").empty();
+                $("#selectdireccioneditar").empty();
                 regionesagregar();
             })
         }
         else {
             console.error("sin usuario")
-
-
         }
     }
 );
 
 function regionesagregar() {
-
-
-    $("#selectteste").append("<option value=\"4\">Option 4</option>\n");
 
     db.collection("Regiones").get().then(function (querySnapshot) {
         var html =
@@ -294,9 +300,6 @@ function regionesagregar() {
 
 function regionesmodificar() {
 
-
-    $("#selectteste").append("<option value=\"4\">Option 4</option>\n");
-
     db.collection("Regiones").get().then(function (querySnapshot) {
         var html =
             "<div class=\"input-field col s12 l6\">" +
@@ -321,7 +324,7 @@ function regionesmodificar() {
             "<label>Comunas</label>" +
             "</div>";
 
-        $('#test').append(html);
+        $('#selectdireccioneditar').append(html);
         $('select').formSelect();
 
         //document.write(html);
@@ -336,10 +339,8 @@ function cargaComunas(provinciaSelect) {
     var region = $("#region :selected").text();
     var html = '';
     db.collection("Regiones").doc(region).collection("Provincias").doc(provincia).collection("Comunas").get().then(function (querySnapshot) {
-
-
         querySnapshot.forEach(function (doc) {
-            html = html + " <option value=\"1\">" + doc.id + "</option>\n";
+            html = html + " <option value=\"1\">" + doc.id + "</option>";
         });
         $("#comuna").append(html);
         $('select').formSelect();
@@ -357,7 +358,7 @@ function cargaProvincias(regionSelect) {
     db.collection("Regiones").doc(region).collection("Provincias").get().then(function (querySnapshot) {
 
         querySnapshot.forEach(function (doc) {
-            html = html + "<option value=" + doc.id + ">" + doc.id + "</option>\n";
+            html = html + "<option value=" + doc.id + ">" + doc.id + "</option>";
         });
         $("#provincia").append(html);
         $('select').formSelect();
