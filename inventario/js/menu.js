@@ -14,8 +14,8 @@ firebase.auth().onAuthStateChanged(function (user) {
             }).then(function () {
                 $("#nombre").empty();
                 $("#email").empty();
-                $("#nombre").append("<span class=\"white-text name\">" + user.displayName + "</span>");
-                $("#email").append("<span class=\"white-text email\">" + user.email + "</span>");
+                $("#nombre").append("<span class=\"black-text name\">" + user.displayName + "</span>");
+                $("#email").append("<span class=\"black-text email\">" + user.email + "</span>");
             }).catch(function (error) {
                 // An error happened.
             });

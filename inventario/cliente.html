@@ -4,7 +4,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
     <title>Cliente</title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -13,6 +13,7 @@
         header, main, footer {
             padding-left: 300px;
         }
+
         @media only screen and (max-width: 992px) {
             header, main, footer {
                 padding-left: 0;
@@ -22,6 +23,34 @@
 </head>
 
 <body>
+
+
+<div class="menuContainer"></div>
+<main>
+    <div class="fixed-action-btn">
+        <a id="crearCliente" class="btn-floating btn-large waves-effect waves-light green modal-trigger"
+           href="#modalAgregarCliente"><i class="material-icons">add</i></a>
+    </div>
+
+    <div class="row">
+        <div class="col s12 m11 l11 xl11">
+
+            <div class="card-panel white hoverable">
+                <span>Clientes</span>
+                <table id="clientes" class="highlight responsive-table centered col s12">
+
+
+                </table>
+                <a class="waves-effect waves-teal btn-flat pin-bottom modal-trigger"
+                   href="#">pensar que hara este boton</a>
+                <a href="#">This is a link</a>
+            </div>
+
+
+        </div>
+    </div>
+</main>
+
 
 <!-- Modal Structure -->
 <div id="modalAgregarCliente" class="modal modal-fixed-footer">
@@ -33,106 +62,86 @@
                 <div class="switch">
                     <label>
                         Inhabilitado
-                        <input type="checkbox">
+                        <input id="habilitado" type="checkbox" checked>
                         <span class="lever"></span>
                         Habilitado
                     </label>
                 </div>
+
+
             </div>
         </div>
         <div class="row">
-            <form class="col s12">
+            <form class="col l12 s12">
 
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epRut" type="text" class="validate">
-                        <label for="epRut">Rut</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epNombre" type="text" class="validate">
-                        <label for="epNombre">Nombre</label>
-                    </div>
+                <div class="input-field col l6 ">
+                    <input id="epRut" type="text" class="validate">
+                    <label for="epRut">Rut</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epCelular" type="text" class="validate">
-                        <label for="epCelular">Celular</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epContacto" type="text" class="validate">
-                        <label for="epContacto">Contacto</label>
-                    </div>
+                <div class="input-field col s6">
+                    <input id="epNombre" type="text" class="validate">
+                    <label for="epNombre">Nombre</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epEdad" type="text" class="validate">
-                        <label for="epEdad">Edad</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epFacebook" type="text" class="validate">
-                        <label for="epFacebook">Facebook</label>
-                    </div>
+
+                <div class="input-field col s6">
+                    <input id="epCelular" type="text" class="validate">
+                    <label for="epCelular">Celular</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epFechaNacimiento" type="text" class="validate">
-                        <label for="epFechaNacimiento">Fecha Nacimiento</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epFax" type="text" class="validate">
-                        <label for="epFax">Fax</label>
-                    </div>
+
+
+                <div class="input-field col s6">
+                    <input id="epFacebook" type="text" class="validate">
+                    <label for="epFacebook">Facebook</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epGiro" type="text" class="validate">
-                        <label for="epGiro">Giro</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epMail" type="text" class="validate">
-                        <label for="epMail">Mail</label>
-                    </div>
+
+                <div class="input-field col s6">
+                    <input id="epFechaNacimiento" type="date" class="validate">
+                    <label for="epFechaNacimiento">Fecha Nacimiento</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epSexo" type="text" class="validate">
-                        <label for="epSexo">Sexo</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epTelefono" type="text" class="validate">
-                        <label for="epTelefono">Telefono</label>
-                    </div>
+
+
+                <div class="input-field col s6">
+                    <input id="epGiro" type="text" class="validate">
+                    <label for="epGiro">Giro</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epTipoCliente" type="text" class="validate">
-                        <label for="epTipoCliente">Tipo Cliente</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epTwitter" type="text" class="validate">
-                        <label for="epTwitter">Twitter</label>
-                    </div>
+                <div class="input-field col s6">
+                    <input id="epMail" type="text" class="validate">
+                    <label for="epMail">Mail</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epBanco" type="text" class="validate">
-                        <label for="epBanco">Banco</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epCuenta" type="text" class="validate">
-                        <label for="epCuenta">Cuenta</label>
-                    </div>
+
+
+                <div class="input-field col s6">
+                    <input id="epTelefono" type="text" class="validate">
+                    <label for="epTelefono">Telefono</label>
                 </div>
-                <div class="row">
-                    <div class="input-field col s6">
-                        <input id="epTipoCuenta" type="text" class="validate">
-                        <label for="epTipoCuenta">Tipo Cuenta</label>
-                    </div>
-                    <div class="input-field col s6">
-                        <input id="epDireccion" type="text" class="validate">
-                        <label for="epDireccion">Direccion</label>
-                    </div>
+
+                <div class="input-field col s6">
+                    <input id="epTipoCliente" type="text" class="validate">
+                    <label for="epTipoCliente">Tipo Cliente</label>
                 </div>
+                <div class="input-field col s6">
+                    <input id="epTwitter" type="text" class="validate">
+                    <label for="epTwitter">Twitter</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="epBanco" type="text" class="validate">
+                    <label for="epBanco">Banco</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="epCuenta" type="text" class="validate">
+                    <label for="epCuenta">Cuenta</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="epTipoCuenta" type="text" class="validate">
+                    <label for="epTipoCuenta">Tipo Cuenta</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="epDireccion" type="text" class="validate">
+                    <label for="epDireccion">Direccion</label>
+                </div>
+
 
                 <div id="selectDireccion"></div>
 
@@ -140,81 +149,11 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a onclick="guardarCliente()" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
+        <a id="btnGuardar" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
     </div>
 </div>
 
 
-<div class="menuContainer"></div>
-<main>
-    <h1>Clientes</h1>
-    <div class="fixed-action-btn">
-
-        <a class="btn-floating btn-large waves-effect waves-light green modal-trigger" href="#modalAgregarCliente"><i
-                class="material-icons">add</i></a>
-    </div>
-
-    <div class="row">
-        <div class="col l12">
-
-            <div class="row">
-                <div class="input-field col s1">
-                    <select id="limit">
-                        <option value="10">10</option>
-                        <option value="25" selected>25</option>
-                        <option value="50">50</option>
-                    </select>
-                    <label>Mostrar:</label>
-                </div>
-                <div class="col l5 right">
-                    <nav>
-                        <div class="nav-wrapper">
-                            <form>
-                                <div class="input-field">
-                                    <input id="search" type="search" value="" required>
-                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
-                                </div>
-                            </form>
-                        </div>
-                    </nav>
-                </div>
-
-            </div>
-
-            <table id="clientes" class="highlight responsive-table centered">
-                <thead>
-                <tr>
-                    <th>Rut</th>
-                    <th>Nombre</th>
-                    <th>Direccion</th>
-                    <th>Comuna</th>
-                    <th>Mail</th>
-                    <th>Celular</th>
-                    <th>Telefono</th>
-                    <th>Contacto</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-                </thead>
-
-                <tbody>
-
-                </tbody>
-            </table>
-
-            <ul class="pagination right-align">
-                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-                <li class="active"><a href="#!">1</a></li>
-                <li class="waves-effect"><a href="#!">2</a></li>
-                <li class="waves-effect"><a href="#!">3</a></li>
-                <li class="waves-effect"><a href="#!">4</a></li>
-                <li class="waves-effect"><a href="#!">5</a></li>
-                <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-            </ul>
-        </div>
-    </div>
-</main>
 <!--JavaScript at end of body for optimized loading-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -226,8 +165,12 @@
 <script type="text/javascript" src="js/materialize.min.js"></script>
 
 <script>
+
+
     M.AutoInit();
+
     $(document).ready(function () {
+
         $('select').formSelect();
     });
     M.updateTextFields();
@@ -236,6 +179,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 
 <script src="js/cliente/cliente.js"></script>
 

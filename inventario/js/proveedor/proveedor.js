@@ -22,6 +22,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             // });
 
             crearTabla();
+            //Se detecta el click en el boton de guardar los NUEVOS Proveedores
             $("#botonguardar").click(function () {
 
                 var habilitado = true;
@@ -58,6 +59,8 @@ firebase.auth().onAuthStateChanged(function (user) {
                 $("#selectdireccioneditar").empty();
 
             });
+
+            //Se detecta el click en el boton para MODIFICAR los proveedores
             $("#eebotonguardar").click(function () {
 
 
@@ -101,7 +104,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             });
 
 
-            //Consulta de Proveedores
+            //Consulta de Proveedores y los pinta en las dos tablas
             function crearTabla() {
                 $("#proveedores").empty();
                 var prov = " <thead>\n" +
@@ -114,7 +117,6 @@ firebase.auth().onAuthStateChanged(function (user) {
                     "<th>Celular</th>" +
                     "<th>Fono</th>" +
                     "<th>Contacto</th>" +
-                    // "<th>Opciones</th>" +
                     "</tr>" +
                     "</thead>" +
                     "<tbody>" +
@@ -198,11 +200,107 @@ firebase.auth().onAuthStateChanged(function (user) {
                             console.error("Error writing document: ", error);
                         });
 
+                $("#proveedoresDeshabilitados").empty();
+                var provdes = " <thead>\n" +
+                    "<tr>" +
+                    "<th>Rut</th>" +
+                    "<th>Nombre</th>" +
+                    "<th>Direccion</th>" +
+                    "<th>Comuna</th>" +
+                    "<th>Mail</th>" +
+                    "<th>Celular</th>" +
+                    "<th>Fono</th>" +
+                    "<th>Contacto</th>" +
+                    // "<th>Opciones</th>" +
+                    "</tr>" +
+                    "</thead>" +
+                    "<tbody>" +
+                    // db.collection("Usuarios").doc(user.uid).collection("Proveedores").orderBy("rut")
+                    //     .startAfter("12312").limit(parseInt(limit)).get().then(function (querySnapshot) {
+
+                    db.collection("Usuarios").doc(user.uid).collection("Proveedores").where("habilitado", "==", false).orderBy("rut").get().then(function (querySnapshot) {
+                        $("#cargandotabla").empty();
+
+                        querySnapshot.forEach(function (doc) {
+                            // doc.data() is never undefined for query doc snapshots
+                            var rut = doc.data().rut;
+                            var nombre = doc.data().nombre;
+                            var direccion = doc.data().direccion;
+                            var comuna = doc.data().comuna;
+                            var correo = doc.data().correo;
+                            var celular = doc.data().celular;
+                            var fono = doc.data().telefono;
+                            var contacto = doc.data().contacto;
+                            provdes = provdes + "<tr class=\"hoverable\" style=\"cursor: pointer\" data-rut=" + rut + ">" +
+                                "<td>" + rut + "</td>" +
+                                "<td>" + nombre + "</td>" +
+                                "<td>" + direccion + "</td>" +
+                                "<td>" + comuna + "</td>" +
+                                "<td>" + correo + "</td>" +
+                                "<td>" + celular + "</td>" +
+                                "<td>" + fono + "</td>" +
+                                "<td>" + contacto + "</td>" +
+                                // "<td>" +
+                                // "<a class=\"btn-floating hoverable waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a>\n" +
+                                // "<a class=\"btn-floating hoverable waves-effect waves-light red\"><i class=\"material-icons\">delete</i></a>\n" +
+                                // "</td>" +
+                                "</tr>";
+
+                        });
+
+                        provdes = provdes + "</tbody>";
+
+                        $("#proveedoresDeshabilitados").append(provdes);
+                        $("#proveedoresDeshabilitados").dataTable().fnDestroy();
+
+
+                    })
+                        .then(function () {
+                            $('#proveedoresDeshabilitados').DataTable({
+                                "language": {
+                                    "sProcessing": "Procesando...",
+                                    "sLengthMenu": "Mostrar:_MENU_",
+                                    "sZeroRecords": "No se encontraron resultados",
+                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                    "sInfoPostFix": "",
+                                    "sSearch": "Buscar:",
+                                    "sUrl": "",
+                                    "sInfoThousands": ",",
+                                    "sLoadingRecords": "Cargando...",
+                                    "oPaginate": {
+                                        "sFirst": "Primero",
+                                        "sLast": "Último",
+                                        "sNext": "<i class=\"material-icons\">navigate_next</i>",
+                                        "sPrevious": "<i class=\"material-icons\">navigate_before</i>"
+                                    },
+                                    "oAria": {
+                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                    }
+                                }
+                            });
+                            $("select").val('10');
+                            $("#proveedoresDeshabilitados_wrapper").addClass("row");
+                            $("#proveedoresDeshabilitados_length").addClass("col s1 l1");
+                            $("#proveedoresDeshabilitados_filter").addClass("col s11 l11");
+                            $("#proveedoresDeshabilitados_info").addClass("col s6 l6");
+                            $("#proveedoresDeshabilitados_paginate").addClass("col l6 right-align flow-text");
+                            $("#proveedoresDeshabilitados").append("<br>");
+                            $('select').formSelect();
+
+                        })
+                        .catch(function (error) {
+                            console.error("Error writing document: ", error);
+                        });
+
 
             }
 
-            //Detectar cual es el rut de la celda donde se esta haciendo click
-            $('#proveedores').on('click', 'tr td', function (evt) {
+            //Modal para editar proveedores
+            function modalEditar() {
 
                 $("#selectDireccion").empty();
                 $("#selectdireccioneditar").empty();
@@ -217,6 +315,13 @@ firebase.auth().onAuthStateChanged(function (user) {
                 var docRef = db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(rut.toString());
                 docRef.get().then(function (doc) {
                         if (doc.exists) {
+
+
+                            $("#eehabilitado").attr('checked', true);
+                            if ((doc.data().habilitado) == false) {
+                                $("#eehabilitado").attr('checked', false);
+
+                            }
 
                             $("#eeRut").val(doc.data().rut);
                             $("#eename").val(doc.data().nombre);
@@ -250,6 +355,18 @@ firebase.auth().onAuthStateChanged(function (user) {
                 });
 
 
+            }
+
+            //Detectar cual es el rut de la celda donde se esta haciendo click
+            $('#proveedores').on('click', 'tr td', function (evt) {
+                modalEditar();
+
+            });
+
+
+            $('#proveedoresDeshabilitados').on('click', 'tr td', function (evt) {
+
+                modalEditar();
             });
 
             $("#crearproov").click(function () {

@@ -10,7 +10,9 @@ var config = {
 firebase.initializeApp(config);
 var db = firebase.firestore();
 
+
 var cuantosProveedores = 0;
+
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
