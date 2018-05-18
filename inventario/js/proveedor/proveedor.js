@@ -13,373 +13,365 @@ var db = firebase.firestore();
 
 //Se detecta si hay un usuario autenticado y que pasara en este caso
 firebase.auth().onAuthStateChanged(function (user) {
-        if (user) {
+    if (user) {
 
-            // $('#habilitado').click(function () {
-            //     if (!$(this).is(':checked')) {
-            //         return confirm("El proveedor se creara deshabilitado");
-            //     }
-            // });
+        // $('#habilitado').click(function () {
+        //     if (!$(this).is(':checked')) {
+        //         return confirm("El proveedor se creara deshabilitado");
+        //     }
+        // });
+
+        crearTabla();
+        //Se detecta el click en el boton de guardar los NUEVOS Proveedores
+        $("#botonguardar").click(function () {
+
+            var habilitado = true;
+            if (!$("#habilitado").prop('checked')) {
+                habilitado = false;
+            }
+
+
+            var prove = {
+                rut: $("#epRut").val(),
+                habilitado: habilitado,
+                nombre: $("#name").val(),
+                celular: $("#epCelular").val(),
+                // contacto: $("#epContacto").val(),
+                // fax: $("#epFax").val(),
+                razonsocial: $("#epRazonSocial").val(),
+                giro: $("#epGiro").val(),
+                // telefono: $("#telefono").val(),
+                correo: $("#epcorreo").val(),
+                banco: $("#epBanco").val(),
+                cuenta: $("#epCuenta").val(),
+                tipoCuenta: $("#epTipoCuenta").val(),
+                direccion: $("#epDireccion").val(),
+                region: $("#region :selected").text(),
+                provincia: $("#provincia :selected").text(),
+                comuna: $("#comuna :selected").text(),
+            };
+            console.log(prove);
+            db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(prove.rut).set(prove);
+            M.toast({html: 'El usuario se ha creado correctamente', classes: 'rounded green'});
 
             crearTabla();
-            //Se detecta el click en el boton de guardar los NUEVOS Proveedores
-            $("#botonguardar").click(function () {
+            $("#selectDireccion").empty();
+            $("#selectdireccioneditar").empty();
 
-                var habilitado = true;
-                if (!$("#habilitado").prop('checked')) {
-                    habilitado = false;
-                }
+        });
 
-
-                var prove = {
-                    rut: $("#epRut").val(),
-                    habilitado: habilitado,
-                    nombre: $("#name").val(),
-                    celular: $("#epCelular").val(),
-                    contacto: $("#epContacto").val(),
-                    fax: $("#epFax").val(),
-                    razonsocial: $("#epRazonSocial").val(),
-                    giro: $("#epGiro").val(),
-                    telefono: $("#telefono").val(),
-                    correo: $("#epcorreo").val(),
-                    banco: $("#epBanco").val(),
-                    cuenta: $("#epCuenta").val(),
-                    tipoCuenta: $("#epTipoCuenta").val(),
-                    direccion: $("#epDireccion").val(),
-                    region: $("#region :selected").text(),
-                    provincia: $("#provincia :selected").text(),
-                    comuna: $("#comuna :selected").text(),
-                };
-                console.log(prove);
-                db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(prove.rut).set(prove);
-                M.toast({html: 'El usuario se ha creado correctamente', classes: 'rounded green'});
-
-                crearTabla();
-                $("#selectDireccion").empty();
-                $("#selectdireccioneditar").empty();
-
-            });
-
-            //Se detecta el click en el boton para MODIFICAR los proveedores
-            $("#eebotonguardar").click(function () {
+        //Se detecta el click en el boton para MODIFICAR los proveedores
+        $("#eebotonguardar").click(function () {
 
 
-                var eehabilitado = true;
-                if (!$("#eehabilitado").prop('checked')) {
-                    eehabilitado = false;
-                }
-                var eeprov = {
-                    rut: $("#eeRut").val(),
-                    habilitado: eehabilitado,
-                    nombre: $("#eename").val(),
-                    celular: $("#eeCelular").val(),
-                    contacto: $("#eeContacto").val(),
-                    fax: $("#eeFax").val(),
-                    razonsocial: $("#eeRazonSocial").val(),
-                    giro: $("#eeGiro").val(),
-                    telefono: $("#eetelefono").val(),
-                    correo: $("#eecorreo").val(),
-                    banco: $("#eeBanco").val(),
-                    cuenta: $("#eeCuenta").val(),
-                    tipoCuenta: $("#eeTipoCuenta").val(),
-                    direccion: $("#eeDireccion").val(),
-                    region: $("#region :selected").text(),
-                    provincia: $("#provincia :selected").text(),
-                    comuna: $("#comuna :selected").text(),
-                };
+            var eehabilitado = true;
+            if (!$("#eehabilitado").prop('checked')) {
+                eehabilitado = false;
+            }
+            var eeprov = {
+                rut: $("#eeRut").val(),
+                habilitado: eehabilitado,
+                nombre: $("#eename").val(),
+                celular: $("#eeCelular").val(),
+                // contacto: $("#eeContacto").val(),
+                // fax: $("#eeFax").val(),
+                razonsocial: $("#eeRazonSocial").val(),
+                giro: $("#eeGiro").val(),
+                // telefono: $("#eetelefono").val(),
+                correo: $("#eecorreo").val(),
+                banco: $("#eeBanco").val(),
+                cuenta: $("#eeCuenta").val(),
+                tipoCuenta: $("#eeTipoCuenta").val(),
+                direccion: $("#eeDireccion").val(),
+                region: $("#region :selected").text(),
+                provincia: $("#provincia :selected").text(),
+                comuna: $("#comuna :selected").text(),
+            };
 
 
-                db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(eeprov.rut).set(eeprov)
+            db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(eeprov.rut).set(eeprov)
+                .then(function () {
+
+                    crearTabla();
+                    $("#selectDireccion").empty();
+                    $("#selectdireccioneditar").empty();
+                    M.toast({html: 'Los datos se han modificado correctamente', classes: 'rounded green'});
+                })
+                .catch(function (error) {
+                    M.toast({html: 'Error al sobreescribir', classes: 'rounded red'});
+                    M.toast({html: 'Descripcion del error' + error, classes: 'rounded red'});
+                });
+        });
+
+
+        //Consulta de Proveedores y los pinta en las dos tablas
+        function crearTabla() {
+            $("#proveedores").empty();
+            var prov = " <thead>\n" +
+                "<tr>" +
+                "<th>Rut</th>" +
+                "<th>Nombre</th>" +
+                "<th>Razon social</th>" +
+                "<th>Mail</th>" +
+                "<th>Telefono</th>" +
+                // "<th>Celular</th>" +
+                "<th>Comuna</th>" +
+                "<th>Direccion</th>" +
+                "</tr>" +
+                "</thead>" +
+                "<tbody>" +
+                // db.collection("Usuarios").doc(user.uid).collection("Proveedores").orderBy("rut")
+                //     .startAfter("12312").limit(parseInt(limit)).get().then(function (querySnapshot) {
+
+                db.collection("Usuarios").doc(user.uid).collection("Proveedores").where("habilitado", "==", true).orderBy("rut").get().then(function (querySnapshot) {
+                    $("#cargandotabla").empty();
+
+                    querySnapshot.forEach(function (doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        var rut = doc.data().rut;
+                        var nombre = doc.data().nombre;
+                        var direccion = doc.data().direccion;
+                        var comuna = doc.data().comuna;
+                        var correo = doc.data().correo;
+                        var celular = doc.data().celular;
+                        var razon = doc.data().razonsocial;
+                        prov = prov + "<tr class=\"hoverable\" style=\"cursor: pointer\" data-rut=" + rut + ">;" +
+                            "<td>" + rut + "</td>" +
+                            "<td>" + nombre + "</td>" +
+                            "<td>" + razon + "</td>" +
+                            "<td>" + correo + "</td>" +
+                            "<td>" + celular + "</td>" +
+                            "<td>" + comuna + "</td>" +
+                            "<td>" + direccion + "</td>" +
+                            // "<td>" +
+                            // "<a class=\"btn-floating hoverable waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a>\n" +
+                            // "<a class=\"btn-floating hoverable waves-effect waves-light red\"><i class=\"material-icons\">delete</i></a>\n" +
+                            // "</td>" +
+                            "</tr>";
+
+                    });
+
+                    prov = prov + "</tbody>";
+
+                    $("#proveedores").append(prov);
+                    $("#proveedores").dataTable().fnDestroy();
+
+
+                })
                     .then(function () {
+                        $('#proveedores').DataTable({
+                            "language": {
+                                "sProcessing": "Procesando...",
+                                "sLengthMenu": "Mostrar:_MENU_",
+                                "sZeroRecords": "No se encontraron resultados",
+                                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "sInfoPostFix": "",
+                                "sSearch": "Buscar:",
+                                "sUrl": "",
+                                "sInfoThousands": ",",
+                                "sLoadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "<i class=\"material-icons\">navigate_next</i>",
+                                    "sPrevious": "<i class=\"material-icons\">navigate_before</i>"
+                                },
+                                "oAria": {
+                                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+                                }
+                            }
+                        });
+                        $("select").val('10');
+                        $("#proveedores_length").addClass("col s1 l1");
+                        $("#proveedores_filter").addClass("col s11 l11");
+                        $("#proveedores_info").addClass("col s6 l6");
+                        $("#proveedores_paginate").addClass("col l6 right-align flow-text");
+                        $("#proveedores").append("<br>");
+                        $('select').formSelect();
 
-                        crearTabla();
-                        $("#selectDireccion").empty();
-                        $("#selectdireccioneditar").empty();
-                        M.toast({html: 'Los datos se han modificado correctamente', classes: 'rounded green'});
                     })
                     .catch(function (error) {
-                        M.toast({html: 'Error al sobreescribir', classes: 'rounded red'});
-                        M.toast({html: 'Descripcion del error' + error, classes: 'rounded red'});
+                        console.error("Error writing document: ", error);
                     });
-            });
+
+            $("#proveedoresDeshabilitados").empty();
+            var provdes = " <thead>\n" +
+                "<tr>" +
+                "<th>Rut</th>" +
+                "<th>Nombre</th>" +
+                "<th>Razon social</th>" +
+                "<th>Mail</th>" +
+                "<th>Telefono</th>" +
+                // "<th>Celular</th>" +
+                "<th>Comuna</th>" +
+                "<th>Direccion</th>" +
+                "</tr>" +
+                "</thead>" +
+                "<tbody>" +
+                // db.collection("Usuarios").doc(user.uid).collection("Proveedores").orderBy("rut")
+                //     .startAfter("12312").limit(parseInt(limit)).get().then(function (querySnapshot) {
+
+                db.collection("Usuarios").doc(user.uid).collection("Proveedores").where("habilitado", "==", false).orderBy("rut").get().then(function (querySnapshot) {
+                    $("#cargandotabla").empty();
+
+                    querySnapshot.forEach(function (doc) {
+                        // doc.data() is never undefined for query doc snapshots
+                        var rut = doc.data().rut;
+                        var nombre = doc.data().nombre;
+                        var direccion = doc.data().direccion;
+                        var comuna = doc.data().comuna;
+                        var correo = doc.data().correo;
+                        var celular = doc.data().celular;
+                        var razon = doc.data().razonsocial;
+                        provdes = provdes + "<tr class=\"hoverable\" style=\"cursor: pointer\" data-rut=" + rut + ">;" +
+                            "<td>" + rut + "</td>" +
+                            "<td>" + nombre + "</td>" +
+                            "<td>" + razon + "</td>" +
+                            "<td>" + correo + "</td>" +
+                            "<td>" + celular + "</td>" +
+                            "<td>" + comuna + "</td>" +
+                            "<td>" + direccion + "</td>" +
+                            // "<td>" +
+                            // "<a class=\"btn-floating hoverable waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a>\n" +
+                            // "<a class=\"btn-floating hoverable waves-effect waves-light red\"><i class=\"material-icons\">delete</i></a>\n" +
+                            // "</td>" +
+                            "</tr>";
+
+                    });
+
+                    provdes = provdes + "</tbody>";
+
+                    $("#proveedoresDeshabilitados").append(provdes);
+                    $("#proveedoresDeshabilitados").dataTable().fnDestroy();
 
 
-            //Consulta de Proveedores y los pinta en las dos tablas
-            function crearTabla() {
-                $("#proveedores").empty();
-                var prov = " <thead>\n" +
-                    "<tr>" +
-                    "<th>Rut</th>" +
-                    "<th>Nombre</th>" +
-                    "<th>Direccion</th>" +
-                    "<th>Comuna</th>" +
-                    "<th>Mail</th>" +
-                    "<th>Celular</th>" +
-                    "<th>Fono</th>" +
-                    "<th>Contacto</th>" +
-                    "</tr>" +
-                    "</thead>" +
-                    "<tbody>" +
-                    // db.collection("Usuarios").doc(user.uid).collection("Proveedores").orderBy("rut")
-                    //     .startAfter("12312").limit(parseInt(limit)).get().then(function (querySnapshot) {
-
-                    db.collection("Usuarios").doc(user.uid).collection("Proveedores").where("habilitado", "==", true).orderBy("rut").get().then(function (querySnapshot) {
-                        $("#cargandotabla").empty();
-
-                        querySnapshot.forEach(function (doc) {
-                            // doc.data() is never undefined for query doc snapshots
-                            var rut = doc.data().rut;
-                            var nombre = doc.data().nombre;
-                            var direccion = doc.data().direccion;
-                            var comuna = doc.data().comuna;
-                            var correo = doc.data().correo;
-                            var celular = doc.data().celular;
-                            var fono = doc.data().telefono;
-                            var contacto = doc.data().contacto;
-                            prov = prov + "<tr class=\"hoverable\" style=\"cursor: pointer\" data-rut=" + rut + ">;" +
-                                "<td>" + rut + "</td>" +
-                                "<td>" + nombre + "</td>" +
-                                "<td>" + direccion + "</td>" +
-                                "<td>" + comuna + "</td>" +
-                                "<td>" + correo + "</td>" +
-                                "<td>" + celular + "</td>" +
-                                "<td>" + fono + "</td>" +
-                                "<td>" + contacto + "</td>" +
-                                // "<td>" +
-                                // "<a class=\"btn-floating hoverable waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a>\n" +
-                                // "<a class=\"btn-floating hoverable waves-effect waves-light red\"><i class=\"material-icons\">delete</i></a>\n" +
-                                // "</td>" +
-                                "</tr>";
-
-                        });
-
-                        prov = prov + "</tbody>";
-
-                        $("#proveedores").append(prov);
-                        $("#proveedores").dataTable().fnDestroy();
-
-
-                    })
-                        .then(function () {
-                            $('#proveedores').DataTable({
-                                "language": {
-                                    "sProcessing": "Procesando...",
-                                    "sLengthMenu": "Mostrar:_MENU_",
-                                    "sZeroRecords": "No se encontraron resultados",
-                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
-                                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                                    "sInfoPostFix": "",
-                                    "sSearch": "Buscar:",
-                                    "sUrl": "",
-                                    "sInfoThousands": ",",
-                                    "sLoadingRecords": "Cargando...",
-                                    "oPaginate": {
-                                        "sFirst": "Primero",
-                                        "sLast": "Último",
-                                        "sNext": "<i class=\"material-icons\">navigate_next</i>",
-                                        "sPrevious": "<i class=\"material-icons\">navigate_before</i>"
-                                    },
-                                    "oAria": {
-                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                                    }
+                })
+                    .then(function () {
+                        $('#proveedoresDeshabilitados').DataTable({
+                            "language": {
+                                "sProcessing": "Procesando...",
+                                "sLengthMenu": "Mostrar:_MENU_",
+                                "sZeroRecords": "No se encontraron resultados",
+                                "sEmptyTable": "Ningún dato disponible en esta tabla",
+                                "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+                                "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
+                                "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
+                                "sInfoPostFix": "",
+                                "sSearch": "Buscar:",
+                                "sUrl": "",
+                                "sInfoThousands": ",",
+                                "sLoadingRecords": "Cargando...",
+                                "oPaginate": {
+                                    "sFirst": "Primero",
+                                    "sLast": "Último",
+                                    "sNext": "<i class=\"material-icons\">navigate_next</i>",
+                                    "sPrevious": "<i class=\"material-icons\">navigate_before</i>"
+                                },
+                                "oAria": {
+                                    "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
+                                    "sSortDescending": ": Activar para ordenar la columna de manera descendente"
                                 }
-                            });
-                            $("select").val('10');
-                            $("#proveedores_length").addClass("col s1 l1");
-                            $("#proveedores_filter").addClass("col s11 l11");
-                            $("#proveedores_info").addClass("col s6 l6");
-                            $("#proveedores_paginate").addClass("col l6 right-align flow-text");
-                            $("#proveedores").append("<br>");
-                            $('select').formSelect();
-
-                        })
-                        .catch(function (error) {
-                            console.error("Error writing document: ", error);
-                        });
-
-                $("#proveedoresDeshabilitados").empty();
-                var provdes = " <thead>\n" +
-                    "<tr>" +
-                    "<th>Rut</th>" +
-                    "<th>Nombre</th>" +
-                    "<th>Direccion</th>" +
-                    "<th>Comuna</th>" +
-                    "<th>Mail</th>" +
-                    "<th>Celular</th>" +
-                    "<th>Fono</th>" +
-                    "<th>Contacto</th>" +
-                    // "<th>Opciones</th>" +
-                    "</tr>" +
-                    "</thead>" +
-                    "<tbody>" +
-                    // db.collection("Usuarios").doc(user.uid).collection("Proveedores").orderBy("rut")
-                    //     .startAfter("12312").limit(parseInt(limit)).get().then(function (querySnapshot) {
-
-                    db.collection("Usuarios").doc(user.uid).collection("Proveedores").where("habilitado", "==", false).orderBy("rut").get().then(function (querySnapshot) {
-                        $("#cargandotabla").empty();
-
-                        querySnapshot.forEach(function (doc) {
-                            // doc.data() is never undefined for query doc snapshots
-                            var rut = doc.data().rut;
-                            var nombre = doc.data().nombre;
-                            var direccion = doc.data().direccion;
-                            var comuna = doc.data().comuna;
-                            var correo = doc.data().correo;
-                            var celular = doc.data().celular;
-                            var fono = doc.data().telefono;
-                            var contacto = doc.data().contacto;
-                            provdes = provdes + "<tr class=\"hoverable\" style=\"cursor: pointer\" data-rut=" + rut + ">" +
-                                "<td>" + rut + "</td>" +
-                                "<td>" + nombre + "</td>" +
-                                "<td>" + direccion + "</td>" +
-                                "<td>" + comuna + "</td>" +
-                                "<td>" + correo + "</td>" +
-                                "<td>" + celular + "</td>" +
-                                "<td>" + fono + "</td>" +
-                                "<td>" + contacto + "</td>" +
-                                // "<td>" +
-                                // "<a class=\"btn-floating hoverable waves-effect waves-light yellow\"><i class=\"material-icons\">edit</i></a>\n" +
-                                // "<a class=\"btn-floating hoverable waves-effect waves-light red\"><i class=\"material-icons\">delete</i></a>\n" +
-                                // "</td>" +
-                                "</tr>";
-
-                        });
-
-                        provdes = provdes + "</tbody>";
-
-                        $("#proveedoresDeshabilitados").append(provdes);
-                        $("#proveedoresDeshabilitados").dataTable().fnDestroy();
-
-
-                    })
-                        .then(function () {
-                            $('#proveedoresDeshabilitados').DataTable({
-                                "language": {
-                                    "sProcessing": "Procesando...",
-                                    "sLengthMenu": "Mostrar:_MENU_",
-                                    "sZeroRecords": "No se encontraron resultados",
-                                    "sEmptyTable": "Ningún dato disponible en esta tabla",
-                                    "sInfo": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-                                    "sInfoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-                                    "sInfoFiltered": "(filtrado de un total de _MAX_ registros)",
-                                    "sInfoPostFix": "",
-                                    "sSearch": "Buscar:",
-                                    "sUrl": "",
-                                    "sInfoThousands": ",",
-                                    "sLoadingRecords": "Cargando...",
-                                    "oPaginate": {
-                                        "sFirst": "Primero",
-                                        "sLast": "Último",
-                                        "sNext": "<i class=\"material-icons\">navigate_next</i>",
-                                        "sPrevious": "<i class=\"material-icons\">navigate_before</i>"
-                                    },
-                                    "oAria": {
-                                        "sSortAscending": ": Activar para ordenar la columna de manera ascendente",
-                                        "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-                                    }
-                                }
-                            });
-                            $("select").val('10');
-                            $("#proveedoresDeshabilitados_wrapper").addClass("row");
-                            $("#proveedoresDeshabilitados_length").addClass("col s1 l1");
-                            $("#proveedoresDeshabilitados_filter").addClass("col s11 l11");
-                            $("#proveedoresDeshabilitados_info").addClass("col s6 l6");
-                            $("#proveedoresDeshabilitados_paginate").addClass("col l6 right-align flow-text");
-                            $("#proveedoresDeshabilitados").append("<br>");
-                            $('select').formSelect();
-
-                        })
-                        .catch(function (error) {
-                            console.error("Error writing document: ", error);
-                        });
-
-
-            }
-
-            //Modal para editar proveedores
-            function modalEditar() {
-
-                $("#selectDireccion").empty();
-                $("#selectdireccioneditar").empty();
-
-
-                regionesmodificar();
-                var target, rut;
-                target = $(event.target);
-                rut = target.parent().data('rut');
-
-
-                var docRef = db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(rut.toString());
-                docRef.get().then(function (doc) {
-                        if (doc.exists) {
-
-
-                            $("#eehabilitado").attr('checked', true);
-                            if ((doc.data().habilitado) == false) {
-                                $("#eehabilitado").attr('checked', false);
-
                             }
+                        });
+                        $("select").val('10');
+                        $("#proveedoresDeshabilitados_wrapper").addClass("row");
+                        $("#proveedoresDeshabilitados_length").addClass("col s1 l1");
+                        $("#proveedoresDeshabilitados_filter").addClass("col s11 l11");
+                        $("#proveedoresDeshabilitados_info").addClass("col s6 l6");
+                        $("#proveedoresDeshabilitados_paginate").addClass("col l6 right-align flow-text");
+                        $("#proveedoresDeshabilitados").append("<br>");
+                        $('select').formSelect();
 
-                            $("#eeRut").val(doc.data().rut);
-                            $("#eename").val(doc.data().nombre);
-                            $("#eeCelular").val(doc.data().celular);
-                            $("#eeContacto").val(doc.data().contacto);
-                            $("#eeFax").val(doc.data().fax);
-                            $("#eeGiro").val(doc.data().giro);
-                            $("#eeRazonSocial").val(doc.data().razonsocial);
-                            $("#eetelefono").val(doc.data().telefono);
-                            $("#eecorreo").val(doc.data().correo);
-                            $("#eeBanco").val(doc.data().banco);
-                            $("#eeCuenta").val(doc.data().cuenta);
-                            $("#eeTipoCuenta").val(doc.data().tipoCuenta);
-                            $("#eeDireccion").val(doc.data().direccion);
-                            $("#region").val(doc.data().region);
-                            $("#provincia").val(doc.data().provincia);
-                            $("#comuna").val(doc.data().comuna);
+                    })
+                    .catch(function (error) {
+                        console.error("Error writing document: ", error);
+                    });
 
 
-                            M.Modal.getInstance($('#modalEditar')).open();
-                            M.updateTextFields();
+        }
+
+        //Modal para editar proveedores
+        function modalEditar() {
+            //Se vacian todos los selectores de regiones existentes en el documento
+            $("#selectDireccion").empty();
+            $("#selectdireccioneditar").empty();
+
+            //Se cargan los select de regiones solamente en el modal donde se modificara el proveedor
+            regionesmodificar();
+            //declaro variables para la funcion, estan detectaran y guardaran el rut de la fila en la que estoy haciendo click
+            var target, rut;
+            target = $(event.target);
+            rut = target.parent().data('rut');
+            //Hago la consulta pasandole el rut capturado, si se realiza correctamente cargo los datos en la modal
+            var docRef = db.collection("Usuarios").doc(user.uid).collection("Proveedores").doc(rut.toString());
+            docRef.get().then(function (doc) {
+                    if (doc.exists) {
 
 
+                        if (doc.data().habilitado == false) {
+                            $("#eehabilitado").prop('checked', false);
                         } else {
-                            // doc.data() will be undefined in this case
-                            console.log("error");
+                            $("#eehabilitado").prop('checked', true);
+
                         }
+
+                        $("#eeRut").val(doc.data().rut);
+                        $("#eename").val(doc.data().nombre);
+                        $("#eeCelular").val(doc.data().celular);
+                        // $("#eeContacto").val(doc.data().contacto);
+                        // $("#eeFax").val(doc.data().fax);
+                        $("#eeGiro").val(doc.data().giro);
+                        $("#eeRazonSocial").val(doc.data().razonsocial);
+                        // $("#eetelefono").val(doc.data().telefono);
+                        $("#eecorreo").val(doc.data().correo);
+                        $("#eeBanco").val(doc.data().banco);
+                        $("#eeCuenta").val(doc.data().cuenta);
+                        $("#eeTipoCuenta").val(doc.data().tipoCuenta);
+                        $("#eeDireccion").val(doc.data().direccion);
+                        $("#region").val(doc.data().region);
+                        $("#provincia").val(doc.data().provincia);
+                        $("#comuna").val(doc.data().comuna);
+
+
+                        M.Modal.getInstance($('#modalEditar')).open();
+                        M.updateTextFields();
+
+
+                    } else {
+                        // doc.data() will be undefined in this case
+                        console.log("error");
                     }
-                ).catch(function (error) {
-                    console.log("Error getting document:", error);
-                });
-
-
-            }
-
-            //Detectar cual es el rut de la celda donde se esta haciendo click
-            $('#proveedores').on('click', 'tr td', function (evt) {
-                modalEditar();
-
+                }
+            ).catch(function (error) {
+                console.log("Error getting document:", error);
             });
 
 
-            $('#proveedoresDeshabilitados').on('click', 'tr td', function (evt) {
-
-                modalEditar();
-            });
-
-            $("#crearproov").click(function () {
-                $("#selectDireccion").empty();
-                $("#selectdireccioneditar").empty();
-                regionesagregar();
-            })
         }
-        else {
-            console.error("sin usuario")
-        }
+
+        //Detectar cual es el rut de la celda donde se esta haciendo click
+        $('#proveedores').on('click', 'tr td', function (evt) {
+            modalEditar();
+        });
+
+        $('#proveedoresDeshabilitados').on('click', 'tr td', function (evt) {
+            modalEditar();
+        });
+
+        $("#crearproov").click(function () {
+            $("#selectDireccion").empty();
+            $("#selectdireccioneditar").empty();
+            regionesagregar();
+        })
     }
-);
+    else {
+        alert("No se detecto ningun usuario, cierra sesion e inicia nuevamente")
+    }
+});
 
 function regionesagregar() {
 

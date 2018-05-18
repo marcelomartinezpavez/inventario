@@ -25,53 +25,31 @@
     </style>
 </head>
 
-<body class="blue-grey lighten-5">
+<body>
 <div class="menuContainer"></div>
 <main>
     <div class="row">
-        <div class="col s12 m11 l11 xl11">
+        <div class="col s12 m12 l12 xl12">
             <div class="row">
-                <!--Para limitar resultados-->
 
-                <!--<div class="input-field col s1">-->
-                <!--<select id="limit">-->
-                <!--<option value="10">10</option>-->
-                <!--<option value="25" selected>25</option>-->
-                <!--<option value="50">50</option>-->
-                <!--<option value="99999999">Mostrar Todos</option>-->
-                <!--</select>-->
-                <!--<label>Mostrar:</label>-->
-                <!--</div>-->
-                <!--<div class="col l12 right">-->
-                <!--<nav>-->
-                <!--<div class="nav-wrapper">-->
-                <!--<form>-->
-                <!--<div class="input-field">-->
-                <!--<input id="search" type="search" value="" required>-->
-                <!--<label class="label-icon" for="search"><i class="material-icons">search</i></label>-->
-                <!--<i class="material-icons">close</i>-->
-                <!--</div>-->
-                <!--</form>-->
-                <!--</div>-->
-                <!--</nav>-->
-                <!--</div>-->
-                <div id="cargandotabla" class="col l6 offset-l3">
-                    <h2>Cargando Tabla</h2>
+                <div id="cargandotabla" class="col l6 offset-l4">
+                    <h3>Cargando Contenidos</h3>
                     <div class="progress">
                         <div class="indeterminate"></div>
                     </div>
                 </div>
 
             </div>
-            <div class="card-panel white hoverable">
+            <div class="card-panel white hoverable z-depth-1-half">
                 <span>Proveedores</span>
-                <table id="proveedores" class="highlight responsive-table centered col s12">
+                <table id="proveedores" class="responsive-table centered col s12">
 
 
                 </table>
-                <a class="waves-effect waves-teal btn-flat pin-bottom modal-trigger"
-                   href="#">pensar que hara este boton</a>
-                <a href="#">This is a link</a>
+                <a id="crearproov" href="#modalAgregarProveedor"
+                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable"><i
+                        class="material-icons left">add</i>Agregar Proveedor</a>
+
             </div>
 
 
@@ -84,9 +62,11 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
 
 
                 </table>
-                <a class="waves-effect waves-teal btn-flat pin-bottom modal-trigger"
-                   href="#">pensar que hara este boton</a>
-                <a href="#">This is a link</a>
+                <!--<a id="ocultar" href="#modalAgregarProveedor"-->
+                <!--class="waves-effect waves-light btn grey pin-bottom modal-trigger z-depth-5 hoverable"><i-->
+                <!--class="material-icons left">visibility_off</i>Ocultar tabla</a>-->
+                <a href="#"></a>
+                <!--<a href="#">This is a link</a>-->
             </div>
 
 
@@ -94,17 +74,17 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
     </div>
 
 
-    <div class="fixed-action-btn">
+    <!--<div class="fixed-action-btn">-->
 
-        <a id="crearproov"
-           class="btn-floating btn-large waves-effect waves-light green modal-trigger z-depth-5 hoverable"
-           href="#modalAgregarProveedor"><i
-                class="material-icons">add</i></a>
-    </div>
+    <!--<a id="crearproov"-->
+    <!--class="btn-floating btn-large waves-effect waves-light green modal-trigger z-depth-5 hoverable"-->
+    <!--href="#modalAgregarProveedor"><i-->
+    <!--class="material-icons">add</i></a>-->
+    <!--</div>-->
 
 </main>
 <!-- Modal para Crear -->
-<div id="modalAgregarProveedor" class="modal modal-fixed-footer">
+<div id="modalAgregarProveedor" class="modal">
     <div class="modal-content">
         <div class="row">
 
@@ -124,80 +104,67 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
         </div>
         <div class="row">
 
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="epRut" type="text" class="validate">
-                    <label for="epRut">Rut</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="name" type="text" class="validate">
-                    <label for="name">Nombre</label>
-                </div>
+            <div class="input-field col s6">
+                <input id="epRut" type="text" class="validate">
+                <label for="epRut">Rut</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="name" type="text" class="validate">
+                <label for="name">Nombre</label>
+            </div>
+
+            <div class="input-field col s6">
+                <input id="epCelular" type="text" class="validate">
+                <label for="epCelular">Celular</label>
+            </div>
+            <!--<div class="input-field col s6">-->
+            <!--<input id="epContacto" type="text" class="validate">-->
+            <!--<label for="epContacto">Contacto</label>-->
+            <!--</div>-->
+
+            <div class="input-field col s6">
+                <input id="epRazonSocial" type="text" class="validate">
+                <label for="epRazonSocial">Razon Social</label>
+            </div>
+            <!--<div class="input-field col s6">-->
+            <!--<input id="epFax" type="text" class="validate">-->
+            <!--<label for="epFax">Fax</label>-->
+            <!--</div>-->
+
+            <div class="input-field col s6">
+                <input id="epGiro" type="text" class="validate">
+                <label for="epGiro">Giro</label>
+            </div>
+            <!--<div class="input-field col s6">-->
+            <!--<input id="telefono" type="text" class="validate">-->
+            <!--<label for="telefono">Telefono</label>-->
+            <!--</div>-->
+
+            <div class="input-field col s6">
+                <input id="epcorreo" type="email" class="validate">
+                <label for="epcorreo">Mail</label>
+                <span class="helper-text" data-error="ingrese un email valido" data-success="Correcto"></span>
             </div>
 
 
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="epCelular" type="text" class="validate">
-                    <label for="epCelular">Celular</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="epContacto" type="text" class="validate">
-                    <label for="epContacto">Contacto</label>
-                </div>
+            <div class="input-field col s6">
+                <input id="epBanco" type="text" class="validate">
+                <label for="epBanco">Banco</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="epCuenta" type="text" class="validate">
+                <label for="epCuenta">Cuenta</label>
             </div>
 
-
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="epRazonSocial" type="text" class="validate">
-                    <label for="epRazonSocial">Razon Social</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="epFax" type="text" class="validate">
-                    <label for="epFax">Fax</label>
-                </div>
+            <div class="input-field col s6">
+                <input id="epTipoCuenta" type="text" class="validate">
+                <label for="epTipoCuenta">Tipo Cuenta</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="epDireccion" type="text" class="validate">
+                <label for="epDireccion">Direccion</label>
             </div>
 
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="epGiro" type="text" class="validate">
-                    <label for="epGiro">Giro</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="telefono" type="text" class="validate">
-                    <label for="telefono">Telefono</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="epcorreo" type="email" class="validate">
-                    <label for="epcorreo">Mail</label>
-                    <span class="helper-text" data-error="ingrese un email valido" data-success="Correcto"></span>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="epBanco" type="text" class="validate">
-                    <label for="epBanco">Banco</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="epCuenta" type="text" class="validate">
-                    <label for="epCuenta">Cuenta</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="epTipoCuenta" type="text" class="validate">
-                    <label for="epTipoCuenta">Tipo Cuenta</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="epDireccion" type="text" class="validate">
-                    <label for="epDireccion">Direccion</label>
-                </div>
-            </div>
 
             <div id="selectDireccion"></div>
 
@@ -210,7 +177,7 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
 
 
 <!-- Modal para Editar y eliminar -->
-<div id="modalEditar" class="modal modal-fixed-footer">
+<div id="modalEditar" class="modal">
     <div class="modal-content">
         <div class="row">
 
@@ -219,7 +186,7 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
                 <div class="switch">
                     <label>
                         Inhabilitado
-                        <input id="eehabilitado" type="checkbox" checked>
+                        <input id="eehabilitado" type="checkbox">
                         <span class="lever"></span>
                         Habilitado
                     </label>
@@ -230,79 +197,65 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
         </div>
         <div class="row">
 
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="eeRut" type="text" class="validate" disabled>
-                    <label for="eeRut">Rut</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eename" type="text" class="validate">
-                    <label for="eename">Nombre</label>
-                </div>
+            <div class="input-field col s6">
+                <input id="eeRut" type="text" class="validate" disabled>
+                <label for="eeRut">Rut</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="eename" type="text" class="validate">
+                <label for="eename">Nombre</label>
+            </div>
+
+            <div class="input-field col s6">
+                <input id="eeCelular" type="text" class="validate">
+                <label for="eeCelular">Celular</label>
+            </div>
+            <!--<div class="input-field col s6">-->
+            <!--<input id="eeContacto" type="text" class="validate">-->
+            <!--<label for="eeContacto">Contacto</label>-->
+            <!--</div>-->
+
+            <div class="input-field col s6">
+                <input id="eeRazonSocial" type="text" class="validate">
+                <label for="eeRazonSocial">Razon Social</label>
+            </div>
+            <!--<div class="input-field col s6">-->
+            <!--<input id="eeFax" type="text" class="validate">-->
+            <!--<label for="eeFax">Fax</label>-->
+            <!--</div>-->
+
+            <div class="input-field col s6">
+                <input id="eeGiro" type="text" class="validate">
+                <label for="eeGiro">Giro</label>
+            </div>
+            <!--<div class="input-field col s6">-->
+            <!--<input id="eetelefono" type="text" class="validate">-->
+            <!--<label for="eetelefono">Telefono</label>-->
+            <!--</div>-->
+
+            <div class="input-field col s6">
+                <input id="eecorreo" type="email" class="validate">
+                <label for="eecorreo">Mail</label>
+                <span class="helper-text" data-error="ingrese un email valido" data-success="Correcto"></span>
             </div>
 
 
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="eeCelular" type="text" class="validate">
-                    <label for="eeCelular">Celular</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eeContacto" type="text" class="validate">
-                    <label for="eeContacto">Contacto</label>
-                </div>
+            <div class="input-field col s6">
+                <input id="eeBanco" type="text" class="validate">
+                <label for="eeBanco">Banco</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="eeCuenta" type="text" class="validate">
+                <label for="eeCuenta">Cuenta</label>
             </div>
 
-
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="eeRazonSocial" type="text" class="validate">
-                    <label for="eeRazonSocial">Razon Social</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eeFax" type="text" class="validate">
-                    <label for="eeFax">Fax</label>
-                </div>
+            <div class="input-field col s6">
+                <input id="eeTipoCuenta" type="text" class="validate">
+                <label for="eeTipoCuenta">Tipo Cuenta</label>
             </div>
-
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="eeGiro" type="text" class="validate">
-                    <label for="eeGiro">Giro</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eetelefono" type="text" class="validate">
-                    <label for="eetelefono">Telefono</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="eecorreo" type="email" class="validate">
-                    <label for="eecorreo">Mail</label>
-                    <span class="helper-text" data-error="ingrese un email valido" data-success="Correcto"></span>
-                </div>
-
-            </div>
-
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="eeBanco" type="text" class="validate">
-                    <label for="eeBanco">Banco</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eeCuenta" type="text" class="validate">
-                    <label for="eeCuenta">Cuenta</label>
-                </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input id="eeTipoCuenta" type="text" class="validate">
-                    <label for="eeTipoCuenta">Tipo Cuenta</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eeDireccion" type="text" class="validate">
-                    <label for="eeDireccion">Direccion</label>
-                </div>
+            <div class="input-field col s6">
+                <input id="eeDireccion" type="text" class="validate">
+                <label for="eeDireccion">Direccion</label>
             </div>
 
             <div id="selectdireccioneditar">
@@ -322,7 +275,9 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
     $(document).init(function () {
+
         $('.menuContainer').load('./menu.html');
+
     });
 </script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
@@ -331,7 +286,6 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
     M.AutoInit();
     $(document).ready(function () {
         // $("#selectDireccion").appendTo(".test");
-
         $('.modal').modal();
         M.updateTextFields();
 

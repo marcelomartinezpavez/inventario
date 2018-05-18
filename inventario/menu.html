@@ -1,54 +1,54 @@
 <main>
-    <nav>
+    <nav class="hide-on-large-only">
 
         <div class="nav-wrapper white black-text">
-            <a href="#!" class=" black-text brand-logo">Sistema de Inventario</a>
+            <!--<a href="#!" class=" black-text brand-logo">Sistema de Inventario</a>-->
             <a href="#" data-target="slide-out" class="sidenav-trigger"><i
                     class="black-text material-icons">menu</i></a>
 
             <!--<a class="btn-floating btn-large halfway-fab waves-effect waves-light teal">-->
             <!--<i class="material-icons">add</i>-->
             <!--</a>-->
-            <ul class="right hide-on-med-and-down">
-                <li><a class="waves-effect tooltipped" data-position="bottom" data-tooltip="Configuracion"
-                       href="configuracion.html"><i class="black-text material-icons">settings</i></a></li>
-                <li>&emsp;</li>
-                <li><a id="editarperfilmodal" class="modal-trigger tooltipped" data-position="bottom"
-                       data-tooltip="Editar Perfil"
-                       href="#modalEditarPerfil"><i class="black-text material-icons">edit</i></a></li>
-                <li>&emsp;</li>
-                <li><a id="cerrarSesion" class="waves-effect tooltipped" data-position="bottom"
-                       data-tooltip="Cerrar Sesion"><i class="black-text material-icons">exit_to_app</i></a></li>
 
-                <li>&emsp;</li>
-            </ul>
         </div>
     </nav>
-    <ul id="slide-out" class="sidenav sidenav-fixed white black-text">
-        <li>
-            <div class="user-view black-text">
-                <div class="background">
-                    <img class="responsive-img"
-                         src="https://orig00.deviantart.net/20eb/f/2015/030/6/f/_minflat__dark_material_design_wallpaper__4k__by_dakoder-d8fjqzu.jpg">
-                </div>
-                <a href="#user"><img class="circle"
-                                     src="https://openclipart.org/image/2400px/svg_to_png/277081/Male-Avatar.png"></a>
-                <a id="nombre"></a>
-                <a id="email"></a>
-            </div>
-        </li>
-
+    <ul id="slide-out" class="sidenav sidenav-fixed white black-text hoverable">
         <!--<li>-->
-        <!--<div class="divider"></div>-->
+        <!--<div class="user-view black-text">-->
+        <!--<div class="background">-->
+        <!--<img class="responsive-img"-->
+        <!--src="https://orig00.deviantart.net/20eb/f/2015/030/6/f/_minflat__dark_material_design_wallpaper__4k__by_dakoder-d8fjqzu.jpg">-->
+        <!--</div>-->
+        <!--<a href="#user"><img class="circle"-->
+        <!--src="https://openclipart.org/image/2400px/svg_to_png/277081/Male-Avatar.png"></a>-->
+        <!--<a id="nombre"></a>-->
+        <!--<a id="email"></a>-->
+        <!--</div>-->
         <!--</li>-->
+
+
+        <li><h1 class="flow-text center">Sistema de inventario</h1></li>
+
+        <li>
+            <div class="divider"></div>
+        </li>
         <li><a class="subheader">Menu</a></li>
 
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="cliente.html">Cliente</a></li>
-        <li><a href="proveedor.html">Proveedor</a></li>
-        <li><a href="producto.html">Producto</a></li>
-        <li><a href="compra.html">Compra</a></li>
-        <li><a href="venta.html">Venta</a></li>
+        <li><a href="index.html"><i class="material-icons left">home</i>Inicio</a></li>
+        <li><a href="cliente.html"><i class="material-icons left">account_circle</i>Cliente</a></li>
+        <li><a href="proveedor.html"><i class="material-icons left">local_shipping</i>Proveedor</a></li>
+        <li><a href="producto.html"><i class="material-icons left">shopping_cart</i>Producto</a></li>
+        <li><a href="compra.html"><i class="material-icons left">payment</i>Compra</a></li>
+        <li><a href="venta.html"><i class="material-icons left">attach_money</i>Venta</a></li>
+
+        <li><a href="configuracion.html"><i class="material-icons left">settings</i>Configuracion</a></li>
+
+        <!--<li><a id="editarperfilmodal" class="modal-trigger tooltipped" data-position="bottom"-->
+        <!--data-tooltip="Editar Perfil"-->
+        <!--href="#modalEditarPerfil"><i class="black-text material-icons">edit</i></a></li>-->
+
+        <li><a class="red-text" id="cerrarSesion"><i class="material-icons left red-text">exit_to_app</i>Cerrar
+            Sesion</a></li>
     </ul>
 
 

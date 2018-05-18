@@ -58,6 +58,50 @@ firebase.auth().onAuthStateChanged(function (user) {
 
         });
 
+        $("#eebotonguardar").click(function () {
+
+            var eehabilitado = true;
+            if (!$("#eehabilitado").prop('checked')) {
+                eehabilitado = false;
+            }
+
+
+            var eecliente = {
+                rut: $("#eeRut").val(),
+                habilitado: eehabilitado,
+                nombre: $("#eeNombre").val(),
+                celular: $("#eeCelular").val(),
+                facebook: $("#eeFacebook").val(),
+                fechaNacimiento: $("#eeFechaNacimiento").val(),
+                giro: $("#eeGiro").val(),
+                mail: $("#eeMail").val(),
+                telefono: $("#eeTelefono").val(),
+                tipoCliente: $("#eeTipoCliente").val(),
+                twitter: $("#eeTwitter").val(),
+                banco: $("#eeBanco").val(),
+                cuenta: $("#eeCuenta").val(),
+                tipoCuenta: $("#eeTipoCuenta").val(),
+                direccion: $("#eeDireccion").val(),
+                region: $("#region :selected").text(),
+                provincia: $("#provincia :selected").text(),
+                comuna: $("#comuna :selected").text()
+            };
+
+
+            db.collection("Usuarios").doc(user.uid).collection("Clientes").doc(eecliente.rut).set(eecliente).then(function () {
+                M.toast({html: 'El usuario se ha creado correctamente', classes: 'rounded green'});
+
+                crearTabla();
+            }).catch(function (error) {
+                console.error("Error writing document: ", error);
+            });
+
+            // crearTabla();
+            // $("#selectDireccion").empty();
+            // $("#selectdireccioneditar").empty();
+
+        });
+
 
         function crearTabla() {
             $("#clientes").empty();
@@ -89,7 +133,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                     var celular = doc.data().celular;
                     var telefono = doc.data().telefono;
                     var contacto = doc.data().contacto;
-                    cltes = cltes + "<tr class=\"hoverable\" style=\"cursor: pointer\" data-rut=\" + rut + \">" +
+                    cltes = cltes + "<tr class=\"hoverable\" style=\"cursor: pointer\" data-rut=" + rut + ">" +
                         "<td>" + rut + "</td>" +
                         "<td>" + nombre + "</td>" +
                         "<td>" + direccion + "</td>" +
@@ -152,6 +196,70 @@ firebase.auth().onAuthStateChanged(function (user) {
         }
 
         //Fin crear Tabla
+        $('#clientes').on('click', 'tr td', function (evt) {
+            modalEditar();
+        });
+
+        function modalEditar() {
+            //Se vacian todos los selectores de regiones existentes en el documento
+            $("#selectDireccion").empty();
+            $("#selectdireccioneditar").empty();
+
+            //Se cargan los select de regiones solamente en el modal donde se modificara el proveedor
+            regionesmodificar();
+            //declaro variables para la funcion, estan detectaran y guardaran el rut de la fila en la que estoy haciendo click
+            var target, rut;
+            target = $(event.target);
+            rut = target.parent().data('rut');
+
+            //Hago la consulta pasandole el rut capturado, si se realiza correctamente cargo los datos en la modal
+            var docRef = db.collection("Usuarios").doc(user.uid).collection("Clientes").doc(rut.toString());
+            docRef.get().then(function (doc) {
+                    if (doc.exists) {
+
+
+                        if (doc.data().habilitado == false) {
+                            $("#eehabilitado").prop('checked', false);
+                        } else {
+                            $("#eehabilitado").prop('checked', true);
+
+                        }
+
+                        $("#eeRut").val(doc.data().rut);
+                        $("#eeNombre").val(doc.data().nombre);
+                        $("#eeCelular").val(doc.data().celular);
+                        // $("#eeContacto").val(doc.data().contacto);
+                        // $("#eeFax").val(doc.data().fax);
+                        $("#eeFacebook").val(doc.data().facebook);
+                        $("#eeFechaNacimiento").val(doc.data().fechaNacimiento);
+                        // $("#eetelefono").val(doc.data().telefono);
+                        $("#eeGiro").val(doc.data().giro);
+                        $("#eeMail").val(doc.data().mail);
+                        $("#eeTelefono").val(doc.data().telefono);
+                        $("#eeTipoCliente").val(doc.data().tipoCliente);
+                        $("#eeTwitter").val(doc.data().twitter);
+                        $("#eeBanco").val(doc.data().banco);
+                        $("#eeCuenta").val(doc.data().tipoCuenta);
+                        $("#eeTipoCuenta").val(doc.data().cuenta);
+                        $("#eeDireccion").val(doc.data().direccion);
+
+
+                        M.Modal.getInstance($('#modalEditarCliente')).open();
+                        M.updateTextFields();
+
+
+                    } else {
+                        // doc.data() will be undefined in this case
+                        console.log("error");
+                    }
+                }
+            ).catch(function (error) {
+                console.log("Error getting document:", error);
+            });
+
+
+        }
+
 
         $("#crearCliente").click(function () {
             $("#selectDireccion").empty();

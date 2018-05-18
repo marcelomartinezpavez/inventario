@@ -4,7 +4,7 @@
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
     <title>Productos</title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,7 +14,7 @@
             padding-left: 300px;
         }
 
-        @media only screen and (max-width : 992px) {
+        @media only screen and (max-width: 992px) {
             header, main, footer {
                 padding-left: 0;
             }
@@ -24,22 +24,49 @@
 
 <body>
 
+
+
+
+<div class="menuContainer"></div>
+<main>
+
+
+    <div class="row">
+        <div class="col s12 m12 l12 xl12">
+
+            <div class="card-panel white hoverable z-depth-1-half">
+                <span>Productos</span>
+                <table id="productos" class="responsive-table centered col s12">
+
+                </table>
+
+                <a id="crearprod" href="#modalAgregarProducto"
+                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable"><i
+                        class="material-icons left">add</i>Agregar Producto</a>
+
+            </div>
+
+        </div>
+    </div>
+</main>
+
+
 <!-- Modal Structure -->
 <div id="modalAgregarProducto" class="modal modal-fixed-footer">
     <div class="modal-content">
         <div class="row">
 
             <h4 class="col l6">Crear Producto</h4>
-            <div class="col l6 right-align">
-                <div class="switch">
-                    <label>
-                        Inhabilitado
-                        <input type="checkbox">
-                        <span class="lever"></span>
-                        Habilitado
-                    </label>
-                </div>
-            </div>
+            <!--<div class="col l6 right-align">-->
+            <!--<div class="switch">-->
+            <!--<label>-->
+            <!--Inhabilitado-->
+            <!--<input type="checkbox">-->
+            <!--<span class="lever"></span>-->
+            <!--Habilitado-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
         </div>
         <div class="row">
             <form class="col s12">
@@ -129,47 +156,121 @@
         </div>
     </div>
     <div class="modal-footer">
-        <a onclick="guardarProducto()" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
+        <a id="btnGuardar" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
+    </div>
+</div>
+
+<div id="modalEditar" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="row">
+
+            <h4 class="col l6">Crear Producto</h4>
+            <!--<div class="col l6 right-align">-->
+            <!--<div class="switch">-->
+            <!--<label>-->
+            <!--Inhabilitado-->
+            <!--<input type="checkbox">-->
+            <!--<span class="lever"></span>-->
+            <!--Habilitado-->
+            <!--</label>-->
+            <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="row">
+            <form class="col s12">
+
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eeCodigo" type="text" class="validate">
+                        <label for="eeCodigo">Código</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeCategoria" type="text" class="validate">
+                        <label for="eeCategoria">Categoria</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eeColor" type="text" class="validate">
+                        <label for="eeColor">Color</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeCosto" type="text" class="validate">
+                        <label for="eeCosto">Costo</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eeDescripcion" type="text" class="validate">
+                        <label for="eeDescripcion">Descripción</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeDscto1" type="text" class="validate">
+                        <label for="eeDscto1">Descuento 1</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eeDscto2" type="text" class="validate">
+                        <label for="eeDscto2">Descuento 2</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeDscto3" type="text" class="validate">
+                        <label for="eeDscto3">Descuento 3</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eeMarca" type="text" class="validate">
+                        <label for="eeMarca">Marca</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeOrdenCorte" type="text" class="validate">
+                        <label for="eeOrdenCorte">Orden de Corte</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eePrecioVenta" type="text" class="validate">
+                        <label for="eePrecioVenta">Precio Venta</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeStock" type="text" class="validate">
+                        <label for="eeStock">Stock</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eeStockCritico" type="text" class="validate">
+                        <label for="eeStockCritico">Stock Critico</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeTalla" type="text" class="validate">
+                        <label for="eeTalla">Talla</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input id="eeTipoLavado" type="text" class="validate">
+                        <label for="eeTipoLavado">Tipo Lavado</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input id="eeMargen" type="text" class="validate">
+                        <label for="eeMargen">Margen</label>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a id="eebtnGuardar" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
     </div>
 </div>
 
 
-<div class="menuContainer"></div>
-<main>
-    <h1>Productos</h1>
-    <div class="fixed-action-btn">
-
-        <a class="btn-floating btn-large waves-effect waves-light red modal-trigger" href="#modalAgregarProducto"><i
-                class="material-icons">add</i></a>
-    </div>
-
-    <div class="row">
-        <div class="col l12">
-            <table id="productos" class="highlight">
-                <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Descripción</th>
-                    <th>Marca</th>
-                    <th>Categoría</th>
-                    <th>Color</th>
-                    <th>Talla</th>
-                    <th>Lavado</th>
-                    <th>Stock</th>
-                    <th>Editar</th>
-                    <th>Eliminar</th>
-                </tr>
-                </thead>
-
-                <tbody>
-
-                </tbody>
-            </table>
-
-        </div>
-    </div>
-</main>
 <!--JavaScript at end of body for optimized loading-->
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 <script>
@@ -190,7 +291,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
 <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
-
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 <script src="js/producto/producto.js"></script>
 
 

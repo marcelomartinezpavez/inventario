@@ -27,22 +27,20 @@
 
 <div class="menuContainer"></div>
 <main>
-    <div class="fixed-action-btn">
-        <a id="crearCliente" class="btn-floating btn-large waves-effect waves-light green modal-trigger"
-           href="#modalAgregarCliente"><i class="material-icons">add</i></a>
-    </div>
+
 
     <div class="row">
-        <div class="col s12 m11 l11 xl11">
+        <div class="col s12 m12 l12 xl12">
 
             <div class="card-panel white hoverable">
                 <span>Clientes</span>
                 <table id="clientes" class="highlight responsive-table centered col s12">
 
                 </table>
-                <a class="waves-effect waves-teal btn-flat pin-bottom modal-trigger"
-                   href="#">pensar que hara este boton</a>
-                <a href="#">This is a link</a>
+                <a id="crearCliente" href="#modalAgregarCliente"
+                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable"><i
+                        class="material-icons left">add</i>Agregar Cliente</a>
+
             </div>
 
 
@@ -51,7 +49,7 @@
 </main>
 
 
-<!-- Modal Structure -->
+<!-- Modal para crear clientes -->
 <div id="modalAgregarCliente" class="modal modal-fixed-footer">
     <div class="modal-content">
         <div class="row">
@@ -149,6 +147,107 @@
     </div>
     <div class="modal-footer">
         <a id="btnGuardar" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
+    </div>
+</div>
+
+
+<div id="modalEditarCliente" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="row">
+
+            <h4 class="col l6">Crear Cliente</h4>
+            <div class="col l6 right-align">
+                <div class="switch">
+                    <label>
+                        Inhabilitado
+                        <input id="eehabilitado" type="checkbox" checked>
+                        <span class="lever"></span>
+                        Habilitado
+                    </label>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="row">
+            <form class="col l12 s12">
+
+                <div class="input-field col l6 ">
+                    <input id="eeRut" type="text" class="validate" disabled>
+                    <label for="eeRut">Rut</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="eeNombre" type="text" class="validate">
+                    <label for="eeNombre">Nombre</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="eeCelular" type="text" class="validate">
+                    <label for="eeCelular">Celular</label>
+                </div>
+
+
+                <div class="input-field col s6">
+                    <input id="eeFacebook" type="text" class="validate">
+                    <label for="eeFacebook">Facebook</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="eeFechaNacimiento" type="date" class="validate">
+                    <label for="eeFechaNacimiento">Fecha Nacimiento</label>
+                </div>
+
+
+                <div class="input-field col s6">
+                    <input id="eeGiro" type="text" class="validate">
+                    <label for="eeGiro">Giro</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="eeMail" type="text" class="validate">
+                    <label for="eeMail">Mail</label>
+                </div>
+
+
+                <div class="input-field col s6">
+                    <input id="eeTelefono" type="text" class="validate">
+                    <label for="eeTelefono">Telefono</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="eeTipoCliente" type="text" class="validate">
+                    <label for="eeTipoCliente">Tipo Cliente</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="eeTwitter" type="text" class="validate">
+                    <label for="eeTwitter">Twitter</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="eeBanco" type="text" class="validate">
+                    <label for="eeBanco">Banco</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="eeCuenta" type="text" class="validate">
+                    <label for="eeCuenta">Cuenta</label>
+                </div>
+
+                <div class="input-field col s6">
+                    <input id="eeTipoCuenta" type="text" class="validate">
+                    <label for="eeTipoCuenta">Tipo Cuenta</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="eeDireccion" type="text" class="validate">
+                    <label for="eeDireccion">Direccion</label>
+                </div>
+
+
+                <div id="selectdireccioneditar"></div>
+
+            </form>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a id="eebotonguardar" class="modal-action modal-close waves-effect waves-green btn-flat">Guardar</a>
     </div>
 </div>
 
