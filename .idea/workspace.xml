@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="40442b33-13f8-44de-a59a-e6748d98dd89" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/inventario/compra.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventario/compra.html" afterDir="false" />
-    </list>
+    <list default="true" id="40442b33-13f8-44de-a59a-e6748d98dd89" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -20,8 +17,8 @@
       <file leaf-file-name="compra.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inventario/compra.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="706">
-              <caret line="410" lean-forward="true" selection-start-line="410" selection-end-line="410" />
+            <state relative-caret-position="-103">
+              <caret line="236" column="39" lean-forward="true" selection-start-line="236" selection-start-column="39" selection-end-line="236" selection-end-column="39" />
             </state>
           </provider>
         </entry>
@@ -185,22 +182,30 @@
       <workItem from="1525876879536" duration="4471000" />
       <workItem from="1525884519096" duration="48516000" />
       <workItem from="1526419438872" duration="9731000" />
-      <workItem from="1526995781124" duration="11119000" />
+      <workItem from="1526995781124" duration="12228000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge branch 'guardar-compra-producto'&#10;&#10;# Conflicts:&#10;#&#9;inventario/compra.html">
+      <created>1527023280196</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1527023280197</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="75514000" />
+    <option name="totallyTimeSpent" value="76623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24563318" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24563318" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3291714" />
-      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32893288" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Terminal" order="7" />
@@ -240,15 +245,12 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge branch 'guardar-compra-producto'&#10;&#10;# Conflicts:&#10;#&#9;inventario/compra.html" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'guardar-compra-producto'&#10;&#10;# Conflicts:&#10;#&#9;inventario/compra.html" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/inventario/compra.html</url>
-          <line>319</line>
-          <properties lambdaOrdinal="-1" />
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
   </component>
@@ -500,8 +502,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inventario/compra.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="706">
-          <caret line="410" lean-forward="true" selection-start-line="410" selection-end-line="410" />
+        <state relative-caret-position="-103">
+          <caret line="236" column="39" lean-forward="true" selection-start-line="236" selection-start-column="39" selection-end-line="236" selection-end-column="39" />
         </state>
       </provider>
     </entry>
