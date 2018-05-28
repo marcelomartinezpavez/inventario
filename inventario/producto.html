@@ -5,6 +5,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
     <title>Productos</title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -34,14 +36,14 @@
     <div class="row">
         <div class="col s12 m12 l12 xl12">
 
-            <div class="card-panel white hoverable z-depth-1-half">
-                <span>Productos</span>
-                <table id="productos" class="responsive-table centered col s12">
+            <div class="card-panel white redondeado z-depth-1-half">
+                <h5>Productos</h5>
+                <table id="productos" class="responsive-table striped centered col s12">
 
                 </table>
 
                 <a id="crearprod" href="#modalAgregarProducto"
-                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable"><i
+                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable redondeado"><i
                         class="material-icons left">add</i>Agregar Producto</a>
 
             </div>
@@ -73,80 +75,110 @@
 
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="fas fa-barcode prefix"></i>
+
                         <input id="epCodigo" type="text" class="validate">
                         <label for="epCodigo">Código</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">category</i>
                         <input id="epCategoria" type="text" class="validate">
                         <label for="epCategoria">Categoria</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">color_lens</i>
                         <input id="epColor" type="text" class="validate">
                         <label for="epColor">Color</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">credit_card</i>
+
                         <input id="epCosto" type="text" class="validate">
                         <label for="epCosto">Costo</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">description</i>
+
                         <input id="epDescripcion" type="text" class="validate">
                         <label for="epDescripcion">Descripción</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">local_offer</i>
+
                         <input id="epDscto1" type="text" class="validate">
                         <label for="epDscto1">Descuento 1</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">local_offer</i>
+
                         <input id="epDscto2" type="text" class="validate">
                         <label for="epDscto2">Descuento 2</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">local_offer</i>
+
                         <input id="epDscto3" type="text" class="validate">
                         <label for="epDscto3">Descuento 3</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">format_quote</i>
+
                         <input id="epMarca" type="text" class="validate">
                         <label for="epMarca">Marca</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">format_quote</i>
+
                         <input id="epOrdenCorte" type="text" class="validate">
                         <label for="epOrdenCorte">Orden de Corte</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">attach_money</i>
+
                         <input id="epPrecioVenta" type="text" class="validate">
                         <label for="epPrecioVenta">Precio Venta</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">data_usage</i>
+
                         <input id="epStock" type="text" class="validate">
                         <label for="epStock">Stock</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">report</i>
+
                         <input id="epStockCritico" type="text" class="validate">
                         <label for="epStockCritico">Stock Critico</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">accessibility_new</i>
+
                         <input id="epTalla" type="text" class="validate">
                         <label for="epTalla">Talla</label>
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">local_laundry_service</i>
+
                         <input id="epTipoLavado" type="text" class="validate">
                         <label for="epTipoLavado">Tipo Lavado</label>
                     </div>
                     <div class="input-field col s6">
+                        <i class="material-icons prefix">trending_up</i>
+
                         <input id="epMargen" type="text" class="validate">
                         <label for="epMargen">Margen</label>
                     </div>
