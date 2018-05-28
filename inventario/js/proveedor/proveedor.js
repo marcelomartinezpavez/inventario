@@ -15,11 +15,7 @@ var db = firebase.firestore();
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
 
-        // $('#habilitado').click(function () {
-        //     if (!$(this).is(':checked')) {
-        //         return confirm("El proveedor se creara deshabilitado");
-        //     }
-        // });
+
 
         crearTabla();
         //Se detecta el click en el boton de guardar los NUEVOS Proveedores
@@ -42,10 +38,10 @@ firebase.auth().onAuthStateChanged(function (user) {
                 giro: $("#epGiro").val(),
                 // telefono: $("#telefono").val(),
                 correo: $("#epcorreo").val(),
-                banco: $("#epBanco").val(),
-                cuenta: $("#epCuenta").val(),
-                tipoCuenta: $("#epTipoCuenta").val(),
-                direccion: $("#epDireccion").val(),
+                banco: $("#banco :selected").text(),
+                cuenta: $("#Cuenta").val(),
+                tipoCuenta: $("#tipoCuenta :selected").text(),
+                direccion: $("#Direccion").val(),
                 region: $("#region :selected").text(),
                 provincia: $("#provincia :selected").text(),
                 comuna: $("#comuna :selected").text(),
@@ -73,16 +69,13 @@ firebase.auth().onAuthStateChanged(function (user) {
                 habilitado: eehabilitado,
                 nombre: $("#eename").val(),
                 celular: $("#eeCelular").val(),
-                // contacto: $("#eeContacto").val(),
-                // fax: $("#eeFax").val(),
                 razonsocial: $("#eeRazonSocial").val(),
                 giro: $("#eeGiro").val(),
-                // telefono: $("#eetelefono").val(),
                 correo: $("#eecorreo").val(),
-                banco: $("#eeBanco").val(),
-                cuenta: $("#eeCuenta").val(),
-                tipoCuenta: $("#eeTipoCuenta").val(),
-                direccion: $("#eeDireccion").val(),
+                banco: $("#banco :selected").text(),
+                cuenta: $("#Cuenta").val(),
+                tipoCuenta: $("#tipoCuenta :selected").text(),
+                direccion: $("#Direccion").val(),
                 region: $("#region :selected").text(),
                 provincia: $("#provincia :selected").text(),
                 comuna: $("#comuna :selected").text(),
@@ -102,6 +95,7 @@ firebase.auth().onAuthStateChanged(function (user) {
                     M.toast({html: 'Descripcion del error' + error, classes: 'rounded red'});
                 });
         });
+
 
 
         //Consulta de Proveedores y los pinta en las dos tablas
@@ -297,11 +291,9 @@ firebase.auth().onAuthStateChanged(function (user) {
         //Modal para editar proveedores
         function modalEditar() {
             //Se vacian todos los selectores de regiones existentes en el documento
-            $("#selectDireccion").empty();
-            $("#selectdireccioneditar").empty();
 
             //Se cargan los select de regiones solamente en el modal donde se modificara el proveedor
-            regionesmodificar();
+            modalmodificar();
             //declaro variables para la funcion, estan detectaran y guardaran el rut de la fila en la que estoy haciendo click
             var target, rut;
             target = $(event.target);
@@ -328,10 +320,10 @@ firebase.auth().onAuthStateChanged(function (user) {
                         $("#eeRazonSocial").val(doc.data().razonsocial);
                         // $("#eetelefono").val(doc.data().telefono);
                         $("#eecorreo").val(doc.data().correo);
-                        $("#eeBanco").val(doc.data().banco);
+                        $("#banco").val(doc.data().banco);
                         $("#eeCuenta").val(doc.data().cuenta);
-                        $("#eeTipoCuenta").val(doc.data().tipoCuenta);
-                        $("#eeDireccion").val(doc.data().direccion);
+                        $("#tipoCuenta").val(doc.data().tipoCuenta);
+                        $("#Direccion").val(doc.data().direccion);
                         $("#region").val(doc.data().region);
                         $("#provincia").val(doc.data().provincia);
                         $("#comuna").val(doc.data().comuna);
@@ -365,7 +357,7 @@ firebase.auth().onAuthStateChanged(function (user) {
         $("#crearproov").click(function () {
             $("#selectDireccion").empty();
             $("#selectdireccioneditar").empty();
-            regionesagregar();
+            modalagregar();
         })
     }
     else {
@@ -373,71 +365,88 @@ firebase.auth().onAuthStateChanged(function (user) {
     }
 });
 
-function regionesagregar() {
-
-    db.collection("Regiones").get().then(function (querySnapshot) {
-        var html =
-            "<div class=\"input-field col s12 l6\">" +
-            "<select class=\" \" onchange=\"cargaProvincias(this)\" id=\"region\">" +
-            "<option value=\"0\" disabled selected>Selecciona una Region</option>";
-        querySnapshot.forEach(function (doc) {
-            html = html + " <option value=" + doc.id.trim() + ">" + doc.id + "</option>";
-        });
-        html = html + "</select>" +
-            "<label>Regiones</label>" +
-            "</div>" +
-            "<div class=\"input-field col s12 l6\">" +
-            "<select onchange=\"cargaComunas(this)\" id=\"provincia\">" +
-            "<option value=\"0\" disabled selected>Selecciona una Provincia</option>" +
-            "</select>" +
-            "<label>Provincias</label>" +
-            "</div>" +
-            "<div class=\"input-field col s12 l6\">" +
-            "<select id='comuna'>" +
-            "<option value=\"0\" disabled selected>Selecciona una comuna</option>" +
-            "</select>" +
-            "<label>Comunas</label>" +
-            "</div>";
-
-        $('#selectDireccion').append(html);
-        $('select').formSelect();
-
-        //document.write(html);
+var html = "";
+db.collection("Bancos").get().then(function (querySnapshot) {
+    html = html +
+        "<div class=\"input-field col s12 l6\">" +
+        "<i class=\"material-icons prefix\">local_convenience_store</i>" +
+        "<select class=\" \" onchange=\"cargaCuenta(this)\" id=\"banco\">" +
+        "<option value=\"0\" disabled selected>Selecciona una Banco</option>";
+    querySnapshot.forEach(function (doc) {
+        html = html + " <option value=" + doc.id.trim() + ">" + doc.id + "</option>";
     });
+    html = html + "</select>" +
+        "<label>Bancos</label>" +
+        "</div>" +
+        "<div class=\"input-field col s12 l6\">" +
+        "<i class=\"material-icons prefix\">list</i>" +
+        "<select id=\"tipoCuenta\">" +
+        "<option value=\"0\" disabled selected>Selecciona un tipo de cuenta</option>" +
+        "</select>" +
+        "<label>Tipo Cuenta</label>" +
+        "</div>" +
+        "<div class=\"input-field col s6\">" +
+        "<i class=\"material-icons prefix\">credit_card</i>" +
+        "<input id=\"Cuenta\" type=\"text\" class=\"validate\">" +
+        "<label for=\"Cuenta\">Nro - Cuenta</label>" +
+        "</div>"
+
+});
+
+db.collection("Regiones").get().then(function (querySnapshot) {
+    html = html +
+        "<div class=\"input-field col s12 l6\">" +
+        "<i class=\"material-icons prefix\">terrain</i>" +
+        "<select class=\" \" onchange=\"cargaProvincias(this)\" id=\"region\">" +
+        "<option value=\"0\" disabled selected>Selecciona una Region</option>";
+    querySnapshot.forEach(function (doc) {
+        html = html + "<option value=" + doc.id.trim() + ">" + doc.id + "</option>";
+    });
+    html = html + "</select>" +
+        "<label>Regiones</label>" +
+        "</div>" +
+        "<div class=\"input-field col s12 l6\">" +
+        "<i class=\"material-icons prefix\">satellite</i>" +
+        "<select onchange=\"cargaComunas(this)\" id=\"provincia\">" +
+        "<option value=\"0\" disabled selected>Selecciona una Provincia</option>" +
+        "</select>" +
+        "<label>Provincias</label>" +
+        "</div>" +
+        "<div class=\"input-field col s12 l6\">" +
+        "<i class=\"material-icons prefix\">map</i>" +
+        "<select id='comuna'>" +
+        "<option value=\"0\" disabled selected>Selecciona una comuna</option>" +
+        "</select>" +
+        "<label>Comunas</label>" +
+        "</div>" +
+        "<div class=\"input-field col s6\">" +
+        "<i class=\"material-icons prefix\">my_location</i>" +
+        "<input id=\"Direccion\" type=\"text\" class=\"validate\">" +
+        "<label for=\"Direccion\">Direccion</label>" +
+        "</div>";
+});
+
+function modalagregar() {
+
+
+    $("#selectDireccion").empty();
+    $("#selectdireccioneditar").empty();
+    $('#selectDireccion').append(html);
+    $('select').formSelect();
+    //document.write(html);
+
 
 }
 
-function regionesmodificar() {
+function modalmodificar() {
 
-    db.collection("Regiones").get().then(function (querySnapshot) {
-        var html =
-            "<div class=\"input-field col s12 l6\">" +
-            "<select class=\" \" onchange=\"cargaProvincias(this)\" id=\"region\">" +
-            "<option value=\"0\" disabled selected>Selecciona una Region</option>";
-        querySnapshot.forEach(function (doc) {
-            html = html + " <option value=" + doc.id.trim() + ">" + doc.id + "</option>";
-        });
-        html = html + "</select>" +
-            "<label>Regiones</label>" +
-            "</div>" +
-            "<div class=\"input-field col s12 l6\">" +
-            "<select onchange=\"cargaComunas(this)\" id=\"provincia\">" +
-            "<option value=\"0\" disabled selected>Selecciona una Provincia</option>" +
-            "</select>" +
-            "<label>Provincias</label>" +
-            "</div>" +
-            "<div class=\"input-field col s12 l6\">" +
-            "<select id='comuna'>" +
-            "<option value=\"0\" disabled selected>Selecciona una comuna</option>" +
-            "</select>" +
-            "<label>Comunas</label>" +
-            "</div>";
-
+        $("#selectDireccion").empty();
+        $("#selectdireccioneditar").empty();
         $('#selectdireccioneditar').append(html);
         $('select').formSelect();
 
         //document.write(html);
-    });
+
 
 }
 
@@ -470,6 +479,23 @@ function cargaProvincias(regionSelect) {
             html = html + "<option value=" + doc.id + ">" + doc.id + "</option>";
         });
         $("#provincia").append(html);
+        $('select').formSelect();
+
+    });
+}
+
+function cargaCuenta(bancoselect) {
+    $('#tipoCuenta').find('option:not(:first)').remove();
+    $("#tipoCuenta").val("0");
+
+    var banco = $("#banco").find(":selected").text();
+    var html = '';
+    db.collection("Bancos").doc(banco).collection("Cuentas").get().then(function (querySnapshot) {
+
+        querySnapshot.forEach(function (doc) {
+            html = html + "<option value=" + doc.id + ">" + doc.id + "</option>";
+        });
+        $("#tipoCuenta").append(html);
         $('select').formSelect();
 
     });

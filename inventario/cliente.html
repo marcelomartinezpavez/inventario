@@ -5,6 +5,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.css" media="screen,projection"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+
     <title>Cliente</title>
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -32,13 +35,13 @@
     <div class="row">
         <div class="col s12 m12 l12 xl12">
 
-            <div class="card-panel white hoverable">
-                <span>Clientes</span>
-                <table id="clientes" class="highlight responsive-table centered col s12">
+            <div class="card-panel white redondeado">
+                <h4>Clientes</h4>
+                <table id="clientes" class="striped responsive-table centered col s12">
 
                 </table>
                 <a id="crearCliente" href="#modalAgregarCliente"
-                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable"><i
+                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable redondeado"><i
                         class="material-icons left">add</i>Agregar Cliente</a>
 
             </div>
@@ -71,73 +74,59 @@
         <div class="row">
             <form class="col l12 s12">
 
-                <div class="input-field col l6 ">
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">perm_identity</i>
                     <input id="epRut" type="text" class="validate">
                     <label for="epRut">Rut</label>
                 </div>
-                <div class="input-field col s6">
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">account_circle</i>
+
                     <input id="epNombre" type="text" class="validate">
                     <label for="epNombre">Nombre</label>
                 </div>
+                <div class="input-field col s12 l6">
+                    <i class="material-icons prefix">contact_phone</i>
 
-                <div class="input-field col s6">
                     <input id="epCelular" type="text" class="validate">
                     <label for="epCelular">Celular</label>
                 </div>
-
-
-                <div class="input-field col s6">
+                <div class="input-field col s12 l6">
+                    <i class="fab fa-facebook-square prefix"></i>
                     <input id="epFacebook" type="text" class="validate">
                     <label for="epFacebook">Facebook</label>
                 </div>
-
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">today</i>
                     <input id="epFechaNacimiento" type="date" class="validate">
                     <label for="epFechaNacimiento">Fecha Nacimiento</label>
                 </div>
-
-
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">format_list_numbered</i>
                     <input id="epGiro" type="text" class="validate">
                     <label for="epGiro">Giro</label>
                 </div>
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">contact_mail</i>
                     <input id="epMail" type="text" class="validate">
                     <label for="epMail">Mail</label>
                 </div>
-
-
                 <div class="input-field col s6">
-                    <input id="epTelefono" type="text" class="validate">
-                    <label for="epTelefono">Telefono</label>
-                </div>
-
-                <div class="input-field col s6">
+                    <i class="material-icons prefix">list</i>
                     <input id="epTipoCliente" type="text" class="validate">
                     <label for="epTipoCliente">Tipo Cliente</label>
                 </div>
                 <div class="input-field col s6">
+                    <i class="fab fa-twitter-square prefix"></i>
+
+
                     <input id="epTwitter" type="text" class="validate">
                     <label for="epTwitter">Twitter</label>
                 </div>
 
-                <div class="input-field col s6">
-                    <input id="epBanco" type="text" class="validate">
-                    <label for="epBanco">Banco</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="epCuenta" type="text" class="validate">
-                    <label for="epCuenta">Cuenta</label>
-                </div>
 
-                <div class="input-field col s6">
-                    <input id="epTipoCuenta" type="text" class="validate">
-                    <label for="epTipoCuenta">Tipo Cuenta</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="epDireccion" type="text" class="validate">
-                    <label for="epDireccion">Direccion</label>
-                </div>
+
+
 
 
                 <div id="selectDireccion"></div>
@@ -155,7 +144,7 @@
     <div class="modal-content">
         <div class="row">
 
-            <h4 class="col l6">Crear Cliente</h4>
+            <h4 class="col l6">Editar Cliente</h4>
             <div class="col l6 right-align">
                 <div class="switch">
                     <label>
@@ -173,72 +162,56 @@
             <form class="col l12 s12">
 
                 <div class="input-field col l6 ">
+                    <i class="material-icons prefix">perm_identity</i>
+
                     <input id="eeRut" type="text" class="validate" disabled>
                     <label for="eeRut">Rut</label>
                 </div>
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">account_circle</i>
+
                     <input id="eeNombre" type="text" class="validate">
                     <label for="eeNombre">Nombre</label>
                 </div>
-
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">contact_phone</i>
+
                     <input id="eeCelular" type="text" class="validate">
                     <label for="eeCelular">Celular</label>
                 </div>
-
-
                 <div class="input-field col s6">
+                    <i class="fab fa-facebook-square prefix"></i>
                     <input id="eeFacebook" type="text" class="validate">
                     <label for="eeFacebook">Facebook</label>
                 </div>
-
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">today</i>
                     <input id="eeFechaNacimiento" type="date" class="validate">
                     <label for="eeFechaNacimiento">Fecha Nacimiento</label>
                 </div>
-
-
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">format_list_numbered</i>
                     <input id="eeGiro" type="text" class="validate">
                     <label for="eeGiro">Giro</label>
                 </div>
                 <div class="input-field col s6">
+                    <i class="material-icons prefix">contact_mail</i>
                     <input id="eeMail" type="text" class="validate">
                     <label for="eeMail">Mail</label>
                 </div>
-
-
                 <div class="input-field col s6">
-                    <input id="eeTelefono" type="text" class="validate">
-                    <label for="eeTelefono">Telefono</label>
-                </div>
+                    <i class="material-icons prefix">list</i>
 
-                <div class="input-field col s6">
                     <input id="eeTipoCliente" type="text" class="validate">
                     <label for="eeTipoCliente">Tipo Cliente</label>
                 </div>
                 <div class="input-field col s6">
+                    <i class="fab fa-twitter-square prefix"></i>
+
                     <input id="eeTwitter" type="text" class="validate">
                     <label for="eeTwitter">Twitter</label>
                 </div>
 
-                <div class="input-field col s6">
-                    <input id="eeBanco" type="text" class="validate">
-                    <label for="eeBanco">Banco</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eeCuenta" type="text" class="validate">
-                    <label for="eeCuenta">Cuenta</label>
-                </div>
-
-                <div class="input-field col s6">
-                    <input id="eeTipoCuenta" type="text" class="validate">
-                    <label for="eeTipoCuenta">Tipo Cuenta</label>
-                </div>
-                <div class="input-field col s6">
-                    <input id="eeDireccion" type="text" class="validate">
-                    <label for="eeDireccion">Direccion</label>
-                </div>
 
 
                 <div id="selectdireccioneditar"></div>

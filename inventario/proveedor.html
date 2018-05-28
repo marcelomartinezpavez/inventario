@@ -25,7 +25,7 @@
     </style>
 </head>
 
-<body>
+<body class="">
 <div class="menuContainer"></div>
 <main>
     <div class="row">
@@ -40,36 +40,44 @@
                 </div>
 
             </div>
-            <div class="card-panel white hoverable z-depth-1-half">
-                <span>Proveedores</span>
-                <table id="proveedores" class="responsive-table centered col s12">
+            <div class="card-panel white z-depth-1-half redondeado">
+                <h4>Proveedores</h4>
+                <table id="proveedores" class="responsive-table striped centered col s12">
 
 
                 </table>
                 <a id="crearproov" href="#modalAgregarProveedor"
-                   class="waves-effect waves-light btn green pin-bottom modal-trigger hoverable"><i
+                   class="waves-effect waves-light btn pin-bottom modal-trigger hoverable redondeado" style="background: #56ab2f;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+"><i
                         class="material-icons left">add</i>Agregar Proveedor</a>
 
             </div>
 
 
-            <div class="card-panel hoverable white-text" style="background: #D31027;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to top, #EA384D, #D31027);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-">
-                <span>Proveedores Deshabilitados</span>
-                <table id="proveedoresDeshabilitados" class="highlight responsive-table centered col s12">
+            <ul class="collapsible popout redondeado">
+
+                <li class="redondeado">
+                    <div class="collapsible-header redondeado"><i class="material-icons">delete</i>Ver
+                        proveedores
+                        Deshabilitados
+                    </div>
+                    <div class="collapsible-body">
+
+                        <div class="card-panel hoverable white-text redondeado"
+                             style="background: #D31027;background: -webkit-linear-gradient(to top, #EA384D, #D31027);background: linear-gradient(to top, #EA384D, #D31027);">
+                            <span>Proveedores Deshabilitados</span>
+                            <table id="proveedoresDeshabilitados" class="highlight responsive-table centered col s12">
 
 
-                </table>
-                <!--<a id="ocultar" href="#modalAgregarProveedor"-->
-                <!--class="waves-effect waves-light btn grey pin-bottom modal-trigger z-depth-5 hoverable"><i-->
-                <!--class="material-icons left">visibility_off</i>Ocultar tabla</a>-->
-                <a href="#"></a>
-                <!--<a href="#">This is a link</a>-->
-            </div>
+                            </table>
+                            <a href="#"></a>
+                        </div>
 
-
+                    </div>
+                </li>
+            </ul>
         </div>
     </div>
 
@@ -105,24 +113,36 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
         <div class="row">
 
             <div class="input-field col s6">
-                <input id="epRut" type="text" class="validate">
+                <i class="material-icons prefix">perm_identity</i>
+                <input id="epRut" type="text" class="validate" placeholder="123456789">
                 <label for="epRut">Rut</label>
             </div>
             <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
                 <input id="name" type="text" class="validate">
                 <label for="name">Nombre</label>
             </div>
 
             <div class="input-field col s6">
-                <input id="epCelular" type="text" class="validate">
+                <i class="material-icons prefix">contact_phone</i>
+                <input id="epCelular" type="number" class="validate">
                 <label for="epCelular">Celular</label>
             </div>
             <!--<div class="input-field col s6">-->
             <!--<input id="epContacto" type="text" class="validate">-->
             <!--<label for="epContacto">Contacto</label>-->
             <!--</div>-->
+            <div class="input-field col s6">
+                <i class="material-icons prefix">contact_mail</i>
+
+                <input id="epcorreo" type="email" class="validate">
+                <label for="epcorreo">Mail</label>
+                <span class="helper-text" data-error="ingrese un email valido" data-success="Correcto"></span>
+            </div>
 
             <div class="input-field col s6">
+                <i class="material-icons prefix">business</i>
+
                 <input id="epRazonSocial" type="text" class="validate">
                 <label for="epRazonSocial">Razon Social</label>
             </div>
@@ -132,38 +152,23 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
             <!--</div>-->
 
             <div class="input-field col s6">
+                <i class="material-icons prefix">format_list_numbered</i>
+
                 <input id="epGiro" type="text" class="validate">
                 <label for="epGiro">Giro</label>
             </div>
             <!--<div class="input-field col s6">-->
             <!--<input id="telefono" type="text" class="validate">-->
             <!--<label for="telefono">Telefono</label>-->
+
             <!--</div>-->
 
-            <div class="input-field col s6">
-                <input id="epcorreo" type="email" class="validate">
-                <label for="epcorreo">Mail</label>
-                <span class="helper-text" data-error="ingrese un email valido" data-success="Correcto"></span>
-            </div>
 
 
-            <div class="input-field col s6">
-                <input id="epBanco" type="text" class="validate">
-                <label for="epBanco">Banco</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="epCuenta" type="text" class="validate">
-                <label for="epCuenta">Cuenta</label>
-            </div>
 
-            <div class="input-field col s6">
-                <input id="epTipoCuenta" type="text" class="validate">
-                <label for="epTipoCuenta">Tipo Cuenta</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="epDireccion" type="text" class="validate">
-                <label for="epDireccion">Direccion</label>
-            </div>
+
+
+
 
 
             <div id="selectDireccion"></div>
@@ -171,7 +176,8 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
         </div>
     </div>
     <div class="modal-footer">
-        <a id="botonguardar" class="modal-action green modal-close waves-effect waves-green btn-flat">Guardar</a>
+        <a id="botonguardar"
+           class="modal-action green modal-close waves-effect waves-green btn-flat redondeado">Guardar</a>
     </div>
 </div>
 
@@ -198,15 +204,21 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
         <div class="row">
 
             <div class="input-field col s6">
+                <i class="material-icons prefix">perm_identity</i>
+
                 <input id="eeRut" type="text" class="validate" disabled>
                 <label for="eeRut">Rut</label>
             </div>
             <div class="input-field col s6">
+                <i class="material-icons prefix">account_circle</i>
+
                 <input id="eename" type="text" class="validate">
                 <label for="eename">Nombre</label>
             </div>
 
             <div class="input-field col s6">
+                <i class="material-icons prefix">contact_phone</i>
+
                 <input id="eeCelular" type="text" class="validate">
                 <label for="eeCelular">Celular</label>
             </div>
@@ -216,6 +228,8 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
             <!--</div>-->
 
             <div class="input-field col s6">
+                <i class="material-icons prefix">business</i>
+
                 <input id="eeRazonSocial" type="text" class="validate">
                 <label for="eeRazonSocial">Razon Social</label>
             </div>
@@ -225,6 +239,8 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
             <!--</div>-->
 
             <div class="input-field col s6">
+                <i class="material-icons prefix">format_list_numbered</i>
+
                 <input id="eeGiro" type="text" class="validate">
                 <label for="eeGiro">Giro</label>
             </div>
@@ -234,29 +250,13 @@ background: linear-gradient(to top, #EA384D, #D31027); /* W3C, IE 10+/ Edge, Fir
             <!--</div>-->
 
             <div class="input-field col s6">
+                <i class="material-icons prefix">contact_mail</i>
+
                 <input id="eecorreo" type="email" class="validate">
                 <label for="eecorreo">Mail</label>
                 <span class="helper-text" data-error="ingrese un email valido" data-success="Correcto"></span>
             </div>
 
-
-            <div class="input-field col s6">
-                <input id="eeBanco" type="text" class="validate">
-                <label for="eeBanco">Banco</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="eeCuenta" type="text" class="validate">
-                <label for="eeCuenta">Cuenta</label>
-            </div>
-
-            <div class="input-field col s6">
-                <input id="eeTipoCuenta" type="text" class="validate">
-                <label for="eeTipoCuenta">Tipo Cuenta</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="eeDireccion" type="text" class="validate">
-                <label for="eeDireccion">Direccion</label>
-            </div>
 
             <div id="selectdireccioneditar">
 
