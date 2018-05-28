@@ -25,7 +25,7 @@ firebase.auth().onAuthStateChanged(function (user) {
             var cliente = {
                 rut: $("#epRut").val(),
                 habilitado: habilitado,
-                nombre: $("#epNombre").val(),
+                nombre: $("#nombre").val(),
                 celular: $("#epCelular").val(),
                 facebook: $("#epFacebook").val(),
                 fechaNacimiento: $("#epFechaNacimiento").val(),
@@ -34,9 +34,9 @@ firebase.auth().onAuthStateChanged(function (user) {
                 tipoCliente: $("#epTipoCliente").val(),
                 twitter: $("#epTwitter").val(),
                 banco: $("#banco :selected").text(),
-                cuenta: $("#epCuenta").val(),
+                cuenta: $("#cuenta").val(),
                 tipoCuenta: $("#tipocuenta :selected").text(),
-                direccion: $("#epDireccion").val(),
+                direccion: $("#direccion").val(),
                 region: $("#region :selected").text(),
                 provincia: $("#provincia :selected").text(),
                 comuna: $("#comuna :selected").text()
@@ -77,9 +77,9 @@ firebase.auth().onAuthStateChanged(function (user) {
                 tipoCliente: $("#eeTipoCliente").val(),
                 twitter: $("#eeTwitter").val(),
                 banco:$("#banco :selected").text(),
-                cuenta: $("#eeCuenta").val(),
+                cuenta: $("#cuenta").val(),
                 tipoCuenta: $("#tipoCuenta :selected").text(),
-                direccion: $("#eeDireccion").val(),
+                direccion: $("#direccion").val(),
                 region: $("#region :selected").text(),
                 provincia: $("#provincia :selected").text(),
                 comuna: $("#comuna :selected").text()
@@ -105,14 +105,14 @@ firebase.auth().onAuthStateChanged(function (user) {
             $("#clientes").empty();
 
             var cltes = "<thead>\n" +
-                "<tr>\n" +
-                "<th>Rut</th>\n" +
-                "<th>Nombre</th>\n" +
-                "<th>Direccion</th>\n" +
-                "<th>Comuna</th>\n" +
-                "<th>Mail</th>\n" +
-                "<th>Celular</th>\n" +
-                "</tr>\n" +
+                "<tr>" +
+                "<th>Rut</th>" +
+                "<th>Nombre</th>" +
+                "<th>Direccion</th>" +
+                "<th>Comuna</th>" +
+                "<th>Mail</th>" +
+                "<th>Celular</th>" +
+                "</tr>" +
                 "</thead>" +
                 "<tbody>";
 
@@ -220,18 +220,16 @@ firebase.auth().onAuthStateChanged(function (user) {
                         $("#eeRut").val(doc.data().rut);
                         $("#eeNombre").val(doc.data().nombre);
                         $("#eeCelular").val(doc.data().celular);
-                        // $("#eeContacto").val(doc.data().contacto);
-                        // $("#eeFax").val(doc.data().fax);
                         $("#eeFacebook").val(doc.data().facebook);
                         $("#eeFechaNacimiento").val(doc.data().fechaNacimiento);
                         $("#eeGiro").val(doc.data().giro);
                         $("#eeMail").val(doc.data().mail);
                         $("#eeTipoCliente").val(doc.data().tipoCliente);
                         $("#eeTwitter").val(doc.data().twitter);
-                        $("#eeBanco").val(doc.data().banco);
-                        $("#eeCuenta").val(doc.data().tipoCuenta);
-                        $("#eeTipoCuenta").val(doc.data().cuenta);
-                        $("#eeDireccion").val(doc.data().direccion);
+                        $("#banco").val(doc.data().banco);
+                        $("#cuenta").val(doc.data().cuenta);
+                        $("#tipoCuenta").val(doc.data().tipoCuenta);
+                        $("#direccion").val(doc.data().direccion);
 
 
                         M.Modal.getInstance($('#modalEditarCliente')).open();
@@ -273,7 +271,7 @@ function modalagregar() {
             "<select class=\" \" onchange=\"cargaCuenta(this)\" id=\"banco\">" +
             "<option value=\"0\" disabled selected>Selecciona una Banco</option>";
         querySnapshot.forEach(function (doc) {
-            html = html + " <option value=" + doc.id.trim() + ">" + doc.id + "</option>";
+            html = html + "<option value=" + doc.id.trim() + ">" + doc.id + "</option>";
         });
         html = html + "</select>" +
             "<label>Bancos</label>" +
@@ -287,8 +285,8 @@ function modalagregar() {
             "</div>" +
             "<div class=\"input-field col s6\">" +
             "<i class=\"material-icons prefix\">credit_card</i>" +
-            "<input id=\"epCuenta\" type=\"text\" class=\"validate\">" +
-            "<label for=\"epCuenta\">Nro - Cuenta</label>" +
+            "<input id=\"cuenta\" type=\"text\" class=\"validate\">" +
+            "<label for=\"cuenta\">Nro - Cuenta</label>" +
             "</div>"
 
     });
@@ -321,8 +319,8 @@ function modalagregar() {
             "</div>" +
             "<div class=\"input-field col s6\">" +
             "<i class=\"material-icons prefix\">my_location</i>" +
-            "<input id=\"epDireccion\" type=\"text\" class=\"validate\">" +
-            "<label for=\"epDireccion\">Direccion</label>" +
+            "<input id=\"direccion\" type=\"text\" class=\"validate\">" +
+            "<label for=\"direccion\">Direccion</label>" +
             "</div>";
         $("#selectDireccion").empty();
         $("#selectdireccioneditar").empty();
@@ -356,8 +354,8 @@ function modalmodificar() {
             "</div>" +
             "<div class=\"input-field col s6\">" +
             "<i class=\"material-icons prefix\">credit_card</i>" +
-            "<input id=\"epCuenta\" type=\"text\" class=\"validate\">" +
-            "<label for=\"epCuenta\">Nro - Cuenta</label>" +
+            "<input id=\"cuenta\" type=\"text\" class=\"validate\">" +
+            "<label for=\"cuenta\">Nro - Cuenta</label>" +
             "</div>"
 
     });
@@ -390,8 +388,8 @@ function modalmodificar() {
             "</div>" +
             "<div class=\"input-field col s6\">" +
             "<i class=\"material-icons prefix\">my_location</i>" +
-            "<input id=\"epDireccion\" type=\"text\" class=\"validate\">" +
-            "<label for=\"epDireccion\">Direccion</label>" +
+            "<input id=\"direccion\" type=\"text\" class=\"validate\">" +
+            "<label for=\"direccion\">Direccion</label>" +
             "</div>";
         $("#selectDireccion").empty();
         $("#selectdireccioneditar").empty();
