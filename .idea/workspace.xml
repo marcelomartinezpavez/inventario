@@ -2,21 +2,117 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="40442b33-13f8-44de-a59a-e6748d98dd89" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/cliente.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compra.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configuracion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/materialize.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/materialize.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/pickadate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iniciarSesion.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/cliente/cliente.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/index/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/materialize.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/materialize.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/producto/producto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/proveedor/proveedor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/producto.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/proveedor.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/venta.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inventario.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inventario.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/inventario/compra.html" beforeDir="false" afterPath="$PROJECT_DIR$/inventario/compra.html" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/inventario/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/cliente.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/compra.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/configuracion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/css/materialize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/css/materialize.min.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/css/pickadate.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/iniciarSesion.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/cliente/cliente.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/index/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/login.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/materialize.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/materialize.min.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/menu.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/mindmup-editabletable.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/numeric-input-example.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/pickadate.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/producto/producto.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/js/proveedor/proveedor.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/menu.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/producto.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/proveedor.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inventario/venta.html" beforeDir="false" />
+>>>>>>> Frist
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1813761056">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="3" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.12" value="1" />
+          <entry key="project.open.time.13" value="1" />
+          <entry key="project.open.time.15" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.opened" value="5" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="css" value="2" />
+          <entry key="html" value="10" />
+          <entry key="js" value="17" />
+          <entry key="md" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CSS" value="2" />
+          <entry key="HTML" value="10" />
+          <entry key="JavaScript" value="17" />
+          <entry key="Markdown" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="css" value="25" />
+          <entry key="html" value="1720" />
+          <entry key="js" value="9671" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CSS" value="26" />
+          <entry key="HTML" value="1731" />
+          <entry key="JavaScript" value="9659" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+<<<<<<< HEAD
       <file leaf-file-name="compra.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/inventario/compra.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -24,16 +120,51 @@
               <caret line="382" column="5" selection-start-line="382" selection-start-column="5" selection-end-line="382" selection-end-column="5" />
               <folding>
                 <element signature="e#7528#7621#0" />
+=======
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/producto.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="123" column="105" selection-start-line="123" selection-start-column="105" selection-end-line="123" selection-end-column="105" />
+              <folding>
+                <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+                <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/producto/producto.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2414">
+              <caret line="404" selection-start-line="404" selection-end-line="404" />
+              <folding>
+                <element signature="e#947#4758#0" />
+                <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+                <element signature="e#4988#5393#0" />
+                <element signature="e#10354#12636#0" />
+                <element signature="e#12733#15338#0" />
+>>>>>>> Frist
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+<<<<<<< HEAD
       <file leaf-file-name="cliente.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/inventario/js/cliente/cliente.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="6090">
               <caret line="406" column="53" selection-start-line="406" selection-start-column="53" selection-end-line="406" selection-end-column="53" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/index/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+>>>>>>> Frist
             </state>
           </provider>
         </entry>
@@ -49,7 +180,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>proveedores</find>
       <find>botonguardar</find>
       <find>.set</find>
       <find>detalle</find>
@@ -63,6 +193,22 @@
       <find>#detalle option[value</find>
       <find>valor</find>
       <find>idProducto</find>
+<<<<<<< HEAD
+=======
+      <find>html</find>
+      <find>proveedores</find>
+      <find>cargando</find>
+      <find>cargandotabla</find>
+      <find>modalagregar</find>
+      <find>proveedoresDeshabilitados</find>
+      <find>modaled</find>
+      <find>crearTabla</find>
+      <find>guardar</find>
+      <find>newp</find>
+      <find>selected</find>
+      <find>num:</find>
+      <find>onchange</find>
+>>>>>>> Frist
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -92,6 +238,25 @@
         <option value="$USER_HOME$/Escritorio/certificados/Certificado-pagos-arancel.html" />
         <option value="$PROJECT_DIR$/inventario/producto.html" />
         <option value="$PROJECT_DIR$/inventario/compra.html" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/js/index/index.js" />
+        <option value="$PROJECT_DIR$/js/cliente/cliente.js" />
+        <option value="$PROJECT_DIR$/cliente.html" />
+        <option value="$PROJECT_DIR$/configuracion.html" />
+        <option value="$PROJECT_DIR$/iniciarSesion.html" />
+        <option value="$PROJECT_DIR$/venta.html" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/menu.html" />
+        <option value="$PROJECT_DIR$/js/proveedor/proveedor.js" />
+        <option value="$PROJECT_DIR$/proveedor.html" />
+        <option value="$PROJECT_DIR$/css/materialize.css" />
+        <option value="$PROJECT_DIR$/compra.html" />
+        <option value="$PROJECT_DIR$/js/script.js" />
+        <option value="$PROJECT_DIR$/js/menu.js" />
+        <option value="$PROJECT_DIR$/js/producto/producto.js" />
+        <option value="$PROJECT_DIR$/producto.html" />
+>>>>>>> Frist
       </list>
     </option>
   </component>
@@ -101,14 +266,9 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="65" />
-    <option name="y" value="-4" />
-    <option name="width" value="1301" />
-    <option name="height" value="772" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="634" />
+    <option name="height" value="800" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -120,13 +280,24 @@
         <subPane>
           <expand>
             <path>
-              <item name="inventario" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventario" type="462c0819:PsiDirectoryNode" />
+              <item name="inv2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="inv2" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="inventario" type="b2602c69:ProjectViewProjectNode" />
-              <item name="inventario" type="462c0819:PsiDirectoryNode" />
-              <item name="inventario" type="462c0819:PsiDirectoryNode" />
+              <item name="inv2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="inv2" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="inv2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="inv2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="inv2" type="b2602c69:ProjectViewProjectNode" />
+              <item name="inv2" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="producto" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="inventario" type="b2602c69:ProjectViewProjectNode" />
@@ -170,7 +341,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Escritorio/certificados/Certificado-saldos.html" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.toDoOptions" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -202,6 +373,14 @@
       <workItem from="1526419438872" duration="9731000" />
       <workItem from="1526995781124" duration="12228000" />
       <workItem from="1528295972353" duration="2000" />
+<<<<<<< HEAD
+=======
+      <workItem from="1543495237662" duration="21063000" />
+      <workItem from="1545870215929" duration="1226000" />
+      <workItem from="1546387775983" duration="3542000" />
+      <workItem from="1546701943570" duration="8807000" />
+      <workItem from="1547596314382" duration="50879000" />
+>>>>>>> Frist
     </task>
     <task id="LOCAL-00001" summary="Merge branch 'guardar-compra-producto'&#10;&#10;# Conflicts:&#10;#&#9;inventario/compra.html">
       <created>1527023280196</created>
@@ -221,6 +400,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="94624000" />
   </component>
   <component name="ToolWindowManager">
@@ -232,10 +412,22 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.3291714" />
       <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.32821077" />
       <window_info anchor="bottom" id="Run" order="2" />
+=======
+    <option name="totallyTimeSpent" value="180141000" />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24543288" />
+>>>>>>> Frist
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28356165" />
+      <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+<<<<<<< HEAD
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -247,21 +439,37 @@
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+=======
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17167851" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.110958904" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3291714" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32750398" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" visible="true" weight="0.3291714" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24543288" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.28356165" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+>>>>>>> Frist
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="8" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3291714" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.32750398" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -293,34 +501,51 @@
     <MESSAGE value="selector de bancos" />
     <option name="LAST_COMMIT_MESSAGE" value="selector de bancos" />
   </component>
+<<<<<<< HEAD
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="2" />
     </breakpoint-manager>
   </component>
+=======
+>>>>>>> Frist
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/inventario/.idea/workspace.xml" />
+    <entry file="file://$PROJECT_DIR$/inventario/configuracion.html" />
+    <entry file="file://$PROJECT_DIR$/inventario/iniciarSesion.html" />
+    <entry file="file://$PROJECT_DIR$/inventario/js/materialize.min.js" />
+    <entry file="file://$PROJECT_DIR$/inventario/js/materialize.js" />
+    <entry file="file://$PROJECT_DIR$/inventario/css/pickadate.css" />
+    <entry file="file://$PROJECT_DIR$/inventario/js/pickadate.js" />
+    <entry file="file://$PROJECT_DIR$/inventario/js/mindmup-editabletable.js" />
+    <entry file="file://$PROJECT_DIR$/inventario/js/numeric-input-example.js" />
+    <entry file="file://$PROJECT_DIR$/inventario/js/proveedor/proveedor.js" />
+    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-valor-arancel.html" />
+    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pago-directo-matricula.html" />
     <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-valor-matricula.html" />
     <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pago-derecho-matricula.html" />
-    <entry file="file://$PROJECT_DIR$/inventario/js/producto/producto.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/inventario/js/producto/producto.js" />
+    <entry file="file://$PROJECT_DIR$/inventario/js/cliente/cliente.js" />
     <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-financiamiento-arancel.html" />
     <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pago-financiamiento-matricula.html" />
     <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-saldos.html" />
     <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pagos-arancel.html" />
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/inventario/.idea/workspace.xml" />
     <entry file="file://$PROJECT_DIR$/inventario/configuracion.html">
+=======
+    <entry file="file://$PROJECT_DIR$/inventario/compra.html" />
+    <entry file="file://$PROJECT_DIR$/inventario/proveedor.html" />
+    <entry file="file://$PROJECT_DIR$/inventario/cliente.html" />
+    <entry file="file://$PROJECT_DIR$/inventario/producto.html" />
+    <entry file="file://$PROJECT_DIR$/js/mindmup-editabletable.js" />
+    <entry file="file://$PROJECT_DIR$/js/login.js">
+>>>>>>> Frist
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/iniciarSesion.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
+    <entry file="file://$PROJECT_DIR$/js/materialize.js">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="-512">
           <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
         </state>
@@ -344,116 +569,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="271">
           <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+=======
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+>>>>>>> Frist
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
+    <entry file="file://$PROJECT_DIR$/cliente.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3660">
-          <caret line="244" column="60" selection-start-line="244" selection-start-column="60" selection-end-line="244" selection-end-column="60" />
+        <state relative-caret-position="473">
+          <caret line="250" column="48" selection-start-line="250" selection-end-line="251" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/cliente/cliente.js">
+    <entry file="file://$PROJECT_DIR$/configuracion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3570">
-          <caret line="238" column="53" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="53" />
+        <state relative-caret-position="338">
+          <caret line="61" column="53" selection-start-line="61" selection-start-column="53" selection-end-line="61" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4230">
-          <caret line="282" column="4" selection-start-line="282" selection-start-column="4" selection-end-line="318" selection-end-column="5" />
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/cliente/cliente.js">
+    <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3570">
-          <caret line="238" column="53" lean-forward="true" selection-start-line="238" selection-start-column="4" selection-end-line="238" selection-end-column="53" />
+        <state relative-caret-position="345">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
+    <entry file="file://$PROJECT_DIR$/iniciarSesion.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2535">
-          <caret line="169" selection-start-line="169" selection-end-line="169" />
+        <state relative-caret-position="855">
+          <caret line="57" column="53" selection-start-line="57" selection-start-column="53" selection-end-line="57" selection-end-column="53" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/proveedor/proveedor.js">
+    <entry file="file://$PROJECT_DIR$/menu.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2010">
-          <caret line="134" column="54" lean-forward="true" selection-start-line="134" selection-start-column="54" selection-end-line="134" selection-end-column="54" />
+        <state relative-caret-position="630">
+          <caret line="42" column="100" selection-start-line="42" selection-start-column="100" selection-end-line="42" selection-end-column="100" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/pickadate.js">
+    <entry file="file://$PROJECT_DIR$/js/cliente/cliente.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67605">
-          <caret line="4507" selection-start-line="4507" selection-end-line="4507" />
+        <state relative-caret-position="1545">
+          <caret line="103" column="35" selection-start-line="103" selection-start-column="35" selection-end-line="103" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/css/pickadate.css">
+    <entry file="file://$PROJECT_DIR$/venta.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11775">
-          <caret line="785" selection-start-line="785" selection-end-line="785" />
+        <state relative-caret-position="375">
+          <caret line="25" selection-start-line="25" selection-end-line="25" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/cliente.html">
+    <entry file="file://$PROJECT_DIR$/css/materialize.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
+        <state relative-caret-position="255">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/cliente/cliente.js">
+    <entry file="file://$PROJECT_DIR$/compra.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2925">
-          <caret line="195" column="30" selection-start-line="195" selection-start-column="30" selection-end-line="195" selection-end-column="30" />
+        <state relative-caret-position="1552">
+          <caret line="278" column="13" selection-start-line="278" selection-start-column="13" selection-end-line="278" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
+    <entry file="file://$PROJECT_DIR$/proveedor.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17460">
-          <caret line="1164" selection-start-line="1164" selection-end-line="1164" />
+        <state relative-caret-position="108">
+          <caret line="98" column="45" selection-start-line="98" selection-start-column="45" selection-end-line="98" selection-end-column="45" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/cliente.html">
+    <entry file="file://$PROJECT_DIR$/js/proveedor/proveedor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17460">
-          <caret line="1164" selection-start-line="1164" selection-end-line="1164" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/cliente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" lean-forward="true" selection-start-line="59" selection-end-line="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/cliente.html">
-      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="645">
           <caret line="43" column="42" selection-start-line="43" selection-start-column="42" selection-end-line="43" selection-end-column="42" />
         </state>
@@ -461,53 +666,41 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/inventario/js/materialize.min.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/materialize.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8190" />
+=======
+        <state relative-caret-position="15">
+          <caret line="23" selection-start-line="21" selection-start-column="14" selection-end-line="23" />
+          <folding>
+            <element signature="e#11726#11781#0" />
+            <element signature="e#22798#24789#0" />
+          </folding>
+        </state>
       </provider>
+>>>>>>> Frist
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/css/pickadate.css">
+    <entry file="file://$PROJECT_DIR$/js/script.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="11775">
-          <caret line="785" selection-start-line="785" selection-end-line="785" />
+        <state relative-caret-position="435">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/pickadate.js">
+    <entry file="file://$PROJECT_DIR$/js/menu.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67605">
-          <caret line="4507" selection-start-line="4507" selection-end-line="4507" />
+        <state relative-caret-position="-148">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/mindmup-editabletable.js">
+    <entry file="file://$PROJECT_DIR$/js/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/numeric-input-example.js">
+    <entry file="file://$PROJECT_DIR$/js/producto/producto.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="705">
-          <caret line="47" column="2" selection-start-line="47" selection-start-column="2" selection-end-line="47" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/inventario/js/proveedor/proveedor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="53" column="94" lean-forward="true" selection-start-line="53" selection-start-column="81" selection-end-line="53" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-valor-arancel.html" />
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pago-directo-matricula.html" />
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-valor-matricula.html" />
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pago-derecho-matricula.html" />
-    <entry file="file://$PROJECT_DIR$/inventario/js/producto/producto.js">
-      <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="780">
           <caret line="52" column="5" selection-start-line="52" selection-start-column="5" selection-end-line="52" selection-end-column="5" />
         </state>
@@ -517,15 +710,23 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="6090">
           <caret line="406" column="53" selection-start-line="406" selection-start-column="53" selection-end-line="406" selection-end-column="53" />
+=======
+        <state relative-caret-position="2414">
+          <caret line="404" selection-start-line="404" selection-end-line="404" />
+          <folding>
+            <element signature="e#947#4758#0" />
+            <element signature="n#style#0;n#tr#0;n#!!top" expanded="true" />
+            <element signature="e#4988#5393#0" />
+            <element signature="e#10354#12636#0" />
+            <element signature="e#12733#15338#0" />
+          </folding>
+>>>>>>> Frist
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-financiamiento-arancel.html" />
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pago-financiamiento-matricula.html" />
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-saldos.html" />
-    <entry file="file://$USER_HOME$/Escritorio/certificados/Certificado-pagos-arancel.html" />
-    <entry file="file://$PROJECT_DIR$/inventario/compra.html">
+    <entry file="file://$PROJECT_DIR$/producto.html">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state relative-caret-position="15">
           <caret line="382" column="5" selection-start-line="382" selection-start-column="5" selection-end-line="382" selection-end-column="5" />
           <folding>
@@ -552,6 +753,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="235">
           <caret line="179" column="68" selection-start-line="179" selection-start-column="68" selection-end-line="179" selection-end-column="68" />
+=======
+        <state relative-caret-position="318">
+          <caret line="123" column="105" selection-start-line="123" selection-start-column="105" selection-end-line="123" selection-end-column="105" />
+          <folding>
+            <element signature="n#style#0;n#table#0;n#form#0;n#div#0;n#div#1;n#li#0;n#ul#0;n#div#0;n#div#0;n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" />
+            <element signature="n#div#3;n#body#0;n#html#0;n#!!top" />
+          </folding>
+>>>>>>> Frist
         </state>
       </provider>
     </entry>

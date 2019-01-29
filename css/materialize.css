@@ -12,6 +12,9 @@ header, main, footer {
         padding-left: 0;
     }
 }
+.selected {
+    color:red;
+}
 
 .redondeado {
     border-radius: 20px !important;
